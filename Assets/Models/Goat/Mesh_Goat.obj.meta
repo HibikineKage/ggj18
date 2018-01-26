@@ -10,10 +10,16 @@ ModelImporter:
     400000: Geo_Goat
     400002: //RootNode
     2100000: lambert5SG
+    2100002: Geo_GoatMat
     2300000: Geo_Goat
     3300000: Geo_Goat
     4300000: Geo_Goat
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Geo_GoatMat
+    second: {fileID: 2100000, guid: df9c4d8a3e140404f90fa2d372d864c2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

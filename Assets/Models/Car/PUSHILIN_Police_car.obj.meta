@@ -10,10 +10,16 @@ ModelImporter:
     400000: default
     400002: //RootNode
     2100000: police_car
+    2100002: defaultMat
     2300000: default
     3300000: default
     4300000: default
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: defaultMat
+    second: {fileID: 2100000, guid: 385cb6956ba707d4c967f39bb6f771ff, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
