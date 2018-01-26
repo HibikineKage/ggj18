@@ -5,16 +5,21 @@ Temp/
 Obj/
 UnityGenerated/
 Library/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
 ExportedObj/
+.consulo/
 *.svd
 *.userprefs
 *.csproj
 *.pidb
 *.suo
+*.tmp
 *.sln
 *.user
 *.unityproj
@@ -40,3 +45,12 @@ Thumbs.db
 *.pyc #python bytecode cache, for some plugins.
 sysinfo.txt #Unity3D Generated File On Crash Reports
 
+# Visual Studio 2015 cache directory
+/.vs/
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Builds
+*.apk
+*.unitypackage
