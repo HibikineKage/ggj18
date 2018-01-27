@@ -37,5 +37,14 @@ namespace ggj2018
             int loadingSceneIndex = SceneUtility.GetBuildIndexByScenePath(SceneManager.GetActiveScene().name);
             SceneManager.LoadScene(loadingSceneIndex + 1);
         }
+
+        void OnTriggerEnter(Collider collider)
+        {
+            var charBehavior = collider.gameObject.GetComponent<CharcterBehavior>();
+            if (charBehavior != null) 
+            {
+                Goal(charBehavior.PlayerNumber);
+            }
+        }
     }
 }

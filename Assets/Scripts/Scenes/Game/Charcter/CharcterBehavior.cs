@@ -27,7 +27,7 @@ namespace ggj2018
         string horizontal = "Pad0Horizontal";
         string jump = "Pad0Jump";
 
-        int _playerNumber;
+        public int PlayerNumber { get; private set; }
 
         void Start()
         {
@@ -37,7 +37,7 @@ namespace ggj2018
 
         public void Setup(int playerNumber)
         {
-            _playerNumber = playerNumber;
+            PlayerNumber = playerNumber;
 
             this.playerNumber = playerNumber;
 
@@ -130,11 +130,6 @@ namespace ggj2018
             if (obstacle != null)
             {
                 obstacle.OnCollisionCharcter(this);
-            }
-            var goalBehavior = collision.gameObject.GetComponent<GoalBehavior>();
-            if (goalBehavior != null) 
-            {
-                goalBehavior.Goal(_playerNumber);
             }
         }
 
