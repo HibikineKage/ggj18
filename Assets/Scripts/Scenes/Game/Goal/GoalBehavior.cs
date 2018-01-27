@@ -30,6 +30,7 @@ namespace ggj2018
             GameScene.Instance.OnGoal(playerNum);
 
             if (dataManager.IsAllPlayerGoal()) {
+                TimeManager.Instance.StopGame();
                 StartCoroutine(NextWaitCoroutine());
             }
         }
