@@ -7,66 +7,75 @@ namespace ggj2018
     public class CharcterBehavior : MonoBehaviour
     {
 
-        public float velocity;
+        public float force;
+        public float maxVelocity;
         public float jumpForce;
         public int maxJumpFrequency;
         public float groundCheckRayDirection;
 
         Rigidbody rb;
-        Camera cam;
+        Animator childAnimator;
         int jumpFrequency;
+        float stunTimer;
+
+        string vertical = "Pad0Vertical";
+        string horizontal = "Pad0Horizontal";
+        string jump = "Pad0Jump";
+
         void Start()
         {
             rb = GetComponent<Rigidbody>();
+            childAnimator = transform.GetComponentInChildren<Animator>();
         }
 
-        /// <summary>
-        /// プレイヤーの初期化
-        /// </summary>
-        /// <param name="playerNumber"></param>
-        public void Setup(int playerNumber = 0)
+        void Setup(int playerNumber)
         {
-            cam = GetComponentInChildren<Camera>();
+            var camera = GetComponentInChildren<Camera>();
 
+            int x = Screen.width / 2 * (playerNumber % 2 == 0 ? 0 : 1);
+            int y = Screen.height / 2 * (playerNumber / 2 == 0 ? 0 : 1);
             int viewportWidth = Screen.width / 2;
             int viewportHeight = Screen.height / 2;
 
-            // カメラの位置を設定する
-            switch(playerNumber)
-            {
-                case 0:
-                    cam.rect = new Rect(0, 0, viewportWidth, viewportHeight);
-                    break;
-                case 1:
-                    cam.rect = new Rect(viewportWidth, 0, viewportWidth, viewportHeight);
-                    break;
-                case 2:
-                    cam.rect = new Rect(0, viewportHeight, viewportWidth, viewportHeight);
-                    break;
-                case 3:
-                    cam.rect = new Rect(viewportWidth, viewportHeight, viewportWidth, viewportHeight);
-                    break;
-            }
+            Debug.Log(x);
+            Debug.Log(y);
+            Debug.Log(viewportWidth);
+            Debug.Log(viewportHeight);
+
+            camera.rect = new Rect(x, y, viewportWidth, viewportHeight);
+
+            vertical = "Pad" + playerNumber + "Vertical";
+            horizontal = "Pad" + playerNumber + "Horizontal";
+            jump = "Pad" + playerNumber + "Jump";
         }
 
         void Update()
         {
-            Walk();
-            Jump();
+            if (Input.GetKeyDown(KeyCode.A)) { childAnimator.SetTrigger("Collapse"); }
+            if (Input.GetKeyDown(KeyCode.Q)) { childAnimator.SetTrigger("Disappear"); }
+            if (stunTimer <= 0)
+            {
+                Walk();
+                Jump();
+            }
         }
 
         void Walk()
         {
-            var vertical = Input.GetAxisRaw("Vertical");
-            var horizontal = Input.GetAxisRaw("Horizontal");
-            var deltaVelocity=(transform.forward* vertical + transform.right*horizontal).normalized*velocity + new Vector3(0, rb.velocity.y, 0);
-
-            rb.velocity = deltaVelocity;
+            var vertical = Input.GetAxisRaw(this.vertical);
+            Debug.Log(vertical);
+            var horizontal = Input.GetAxisRaw(this.horizontal);
+            
+            var deltaForce = (transform.forward * vertical + transform.right * horizontal).normalized * force;
+            if (rb.velocity.sqrMagnitude<=maxVelocity*maxVelocity)
+            {
+                rb.AddForce(deltaForce);
+            }
         }
 
         void Jump()
         {
-            if (Input.GetButtonDown("Fire1") && jumpFrequency < maxJumpFrequency)
+            if (Input.GetButtonDown(jump) && jumpFrequency < maxJumpFrequency)
             {
                 jumpFrequency++;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -75,6 +84,11 @@ namespace ggj2018
             var result = Physics.Raycast(transform.position, -transform.up, groundCheckRayDirection);
             Debug.DrawLine(transform.position, transform.position - transform.up * groundCheckRayDirection);
             if (result) jumpFrequency = 0;
+        }
+
+        void Damaged(float stunTime)
+        {
+            stunTimer = stunTime;
         }
 
         void OnCollisionEnter(Collision collision)
