@@ -43,6 +43,8 @@ namespace ggj2018
 
             var camera = GetComponentInChildren<Camera>();
 
+            print(PlayerNumber);
+
             float x = playerNumber % 2 == 0 ? 0 : 0.5f;
             float y = playerNumber / 2 == 0 ? 0.5f : 0;
             float viewportWidth = .5f;
@@ -54,8 +56,8 @@ namespace ggj2018
             horizontal = "Pad" + playerNumber + "Horizontal";
             jump = "Pad" + playerNumber + "Jump";
 
-            var _materialSwitcher = GetComponent<CharcterMaterialSwitcher>();
-            _materialSwitcher.Setup(playerNumber);
+            //var _materialSwitcher = GetComponent<CharcterMaterialSwitcher>();
+            //_materialSwitcher.Setup(playerNumber);
         }
 
         void Update()
