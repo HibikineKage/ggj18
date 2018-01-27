@@ -106,6 +106,12 @@ namespace ggj2018
                 }
             }
         }
+
+        public void SetDamage(float damage)
+        {
+            // TODO:
+        }
+
         void Damaged(IDamage damage)
         {
             rb.velocity = Vector3.zero;

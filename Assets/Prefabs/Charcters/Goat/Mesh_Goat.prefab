@@ -233,8 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1387e8f284e84f929aec81c0fca27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 25.3
-  maxVelocity: 30.08
+  force: 91.85
+  maxVelocity: 208.6
   jumpForce: 8
   maxJumpFrequency: 3
   groundCheckRayDirection: 3.31
