@@ -17,6 +17,10 @@ namespace ggj2018
         Animator childAnimator;
         int jumpFrequency;
         int playerNumber;
+        public int PlayerNumber
+        {
+            get { return playerNumber; }
+        }
         /// <summary>
         /// ダメージを受けている間のカウンター
         /// 毎フレーム減り続け、ゼロになると起き上がる
@@ -27,8 +31,6 @@ namespace ggj2018
         string horizontal = "Pad0Horizontal";
         string jump = "Pad0Jump";
 
-        int _playerNumber;
-
         void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -37,8 +39,6 @@ namespace ggj2018
 
         public void Setup(int playerNumber)
         {
-            _playerNumber = playerNumber;
-
             this.playerNumber = playerNumber;
 
             var camera = GetComponentInChildren<Camera>();
@@ -69,6 +69,9 @@ namespace ggj2018
             {
                 Walk();
                 Jump();
+            }else
+            {
+                stunTimer -= Time.deltaTime;
             }
         }
 
@@ -90,7 +93,6 @@ namespace ggj2018
             {
                 jumpFrequency++;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-				SeManager.Instance.PlayGoat ();
             }
 
             var result = Physics.Raycast(transform.position, -transform.up, groundCheckRayDirection);
@@ -131,12 +133,8 @@ namespace ggj2018
             {
                 obstacle.OnCollisionCharcter(this);
             }
-            var goalBehavior = collision.gameObject.GetComponent<GoalBehavior>();
-            if (goalBehavior != null) 
-            {
-                goalBehavior.Goal(_playerNumber);
-            }
         }
+
 
         const float reboundForce = 1000.0f;
         public void OnCollisionCharcter(CharcterBehavior charcterBehavior)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace ggj2018
 {
@@ -57,11 +58,16 @@ namespace ggj2018
         public void InitPlayers()
         {
             _players = new PlayerData[GameConstants.PlayerNum];
+            for (var i = 0; i < GameConstants.PlayerNum; i++) {
+                _players[i] = new PlayerData();
+            }
         }
 
         public void AddStageResult(int playerNum, PlayerStageResult stage)
         {
             _players[playerNum].AddStage(stage);
+
+            Debug.LogFormat("Result[{0}] Rank[{1}] RemainTime[{2}] BadScore[{3}]", playerNum, stage.Rank, stage.RemainTime, stage.BadScore);
         }
 
         public int GetCurrentRank()
