@@ -25,21 +25,21 @@ namespace ggj2018
         [SerializeField]
         Sprite[] _grandsonSprites;
 
-        public void Setup(LetterType letterType, int letterLevel)
+        public void Show(int stageNum, int letterLevel)
         {
             var image = GetComponent<Image>();
-            switch (letterType)
+            switch (stageNum)
             {
-                case LetterType.Loveletter:
+                case 0:
                     image.sprite = _loveletterSprites[letterLevel];
                     break;
-                case LetterType.Poster:
+                case 1:
                     image.sprite = _posterSprites[letterLevel];
                     break;
-                case LetterType.Propaganda:
+                case 2:
                     image.sprite = _propagandaSprites[letterLevel];
                     break;
-                case LetterType.Grandson:
+                case 3:
                     image.sprite = _grandsonSprites[letterLevel];
                     break;
                 default:
