@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 2069272840}
   - component: {fileID: 2069272839}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
