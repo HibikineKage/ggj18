@@ -33,7 +33,7 @@ namespace ggj2018
             var camera = GetComponentInChildren<Camera>();
 
             float x = (playerNumber % 2 == 0 ? 0 : 0.5f);
-            float y = Screen.height / 2 * (playerNumber / 2 == 0 ? 0 : 1);
+            float y = (playerNumber / 2 == 0 ? 0 : 0.5f);
             float viewportWidth = .5f;
             float viewportHeight = .5f;
 
