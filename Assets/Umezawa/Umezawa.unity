@@ -799,6 +799,23 @@ Prefab:
       propertyPath: m_Name
       value: Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 154411024774411540, guid: b7fc952dd88e6d846bac0ec1ed09dfb0,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 218819699202652410, guid: b7fc952dd88e6d846bac0ec1ed09dfb0,
+        type: 2}
+      propertyPath: m_TerrainData
+      value: 
+      objectReference: {fileID: 15600000, guid: 47b0fac4ebd92e4468661152fd3a1006,
+        type: 2}
+    - target: {fileID: 154411024774411540, guid: b7fc952dd88e6d846bac0ec1ed09dfb0,
+        type: 2}
+      propertyPath: m_TerrainData
+      value: 
+      objectReference: {fileID: 15600000, guid: 47b0fac4ebd92e4468661152fd3a1006,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7fc952dd88e6d846bac0ec1ed09dfb0, type: 2}
   m_IsPrefabParent: 0
