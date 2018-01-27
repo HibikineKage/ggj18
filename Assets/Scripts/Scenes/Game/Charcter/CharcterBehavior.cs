@@ -18,10 +18,35 @@ namespace ggj2018
         int jumpFrequency;
         float stunTimer;
 
+        string vertical = "Pad0Vertical";
+        string horizontal = "Pad0Horizontal";
+        string jump = "Pad0Jump";
+
         void Start()
         {
             rb = GetComponent<Rigidbody>();
             childAnimator = transform.GetComponentInChildren<Animator>();
+        }
+
+        void Setup(int playerNumber)
+        {
+            var camera = GetComponentInChildren<Camera>();
+
+            int x = Screen.width / 2 * (playerNumber % 2 == 0 ? 0 : 1);
+            int y = Screen.height / 2 * (playerNumber / 2 == 0 ? 0 : 1);
+            int viewportWidth = Screen.width / 2;
+            int viewportHeight = Screen.height / 2;
+
+            Debug.Log(x);
+            Debug.Log(y);
+            Debug.Log(viewportWidth);
+            Debug.Log(viewportHeight);
+
+            camera.rect = new Rect(x, y, viewportWidth, viewportHeight);
+
+            vertical = "Pad" + playerNumber + "Vertical";
+            horizontal = "Pad" + playerNumber + "Horizontal";
+            jump = "Pad" + playerNumber + "Jump";
         }
 
         void Update()
@@ -37,8 +62,9 @@ namespace ggj2018
 
         void Walk()
         {
-            var vertical = Input.GetAxisRaw("Vertical");
-            var horizontal = Input.GetAxisRaw("Horizontal");
+            var vertical = Input.GetAxisRaw(this.vertical);
+            Debug.Log(vertical);
+            var horizontal = Input.GetAxisRaw(this.horizontal);
             
             var deltaForce = (transform.forward * vertical + transform.right * horizontal).normalized * force;
             if (rb.velocity.sqrMagnitude<=maxVelocity*maxVelocity)
@@ -49,7 +75,7 @@ namespace ggj2018
 
         void Jump()
         {
-            if (Input.GetButtonDown("Fire1") && jumpFrequency < maxJumpFrequency)
+            if (Input.GetButtonDown(jump) && jumpFrequency < maxJumpFrequency)
             {
                 jumpFrequency++;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
