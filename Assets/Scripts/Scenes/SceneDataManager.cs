@@ -55,6 +55,11 @@ namespace ggj2018
             return _players[playerNum];
         }
 
+        public PlayerStageResult GetPlayerStage(int playerNum) 
+        {
+            return _players[playerNum].Stages[CurrentStageNum];
+        }
+
         public void InitPlayers()
         {
             _players = new PlayerData[GameConstants.PlayerNum];
