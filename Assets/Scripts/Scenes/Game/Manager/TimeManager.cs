@@ -26,6 +26,11 @@ namespace ggj2018
             _isStarted = true;
         }
 
+        public void StopGame()
+        {
+            _isStarted = false;
+        }
+
         void Update()
         {
             if (_isStarted) {
