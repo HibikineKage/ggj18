@@ -83,6 +83,7 @@ namespace ggj2018
             {
                 jumpFrequency++;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+				SeManager.Instance.PlayGoat ();
             }
 
             var result = Physics.Raycast(transform.position, -transform.up, groundCheckRayDirection);
