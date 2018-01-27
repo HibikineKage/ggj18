@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ggj2018
 {
-    public class CharcterBehavior : MonoBehaviour
+    public partial class CharcterBehavior : MonoBehaviour, IObstacle
     {
 
         public float force;
@@ -36,8 +36,8 @@ namespace ggj2018
         {
             var camera = GetComponentInChildren<Camera>();
 
-            float x = (playerNumber % 2 == 0 ? 0 : 0.5f);
-            float y = (playerNumber / 2 == 0 ? 0 : 0.5f);
+            float x = playerNumber % 2 == 0 ? 0 : 0.5f;
+            float y = playerNumber / 2 == 0 ? 0.5f : 0;
             float viewportWidth = .5f;
             float viewportHeight = .5f;
 
@@ -64,38 +64,8 @@ namespace ggj2018
 
         void Walk()
         {
-			bool keyCodeA = Input.GetKey(KeyCode.A);
-            bool keyCodeD = Input.GetKey(KeyCode.D);
-            bool keyCodeW = Input.GetKey(KeyCode.W);
-            bool keyCodeS = Input.GetKey(KeyCode.S);
-            print(keyCodeA);
-
-			var vertical = 0.0f;
-			var horizontal = 0.0f;
-
-			if (keyCodeA || keyCodeD)
-			{
-				if (keyCodeA)
-					horizontal = -1.0f;
-				if (keyCodeD)
-					horizontal = 1.0f;
-			}
-			else
-			{
-				horizontal = Input.GetAxisRaw(this.horizontal);
-			}
-
-			if (keyCodeW || keyCodeS)
-			{
-				if (keyCodeW)
-					vertical = -1.0f;
-				if (keyCodeS)
-					vertical = 1.0f;
-			}
-			else
-			{
-				vertical = -Input.GetAxisRaw(this.vertical);
-			}
+            float horizontal = GetWalkHorizontal();
+            float vertical = GetWalkVertical();
 
 			var deltaForce = (transform.forward * vertical + transform.right * horizontal).normalized * force;
             if (rb.velocity.sqrMagnitude<=maxVelocity*maxVelocity)
@@ -106,7 +76,7 @@ namespace ggj2018
 
         void Jump()
         {
-            if (Input.GetButtonDown(jump) && jumpFrequency < maxJumpFrequency)
+            if (GetJumpInput() && jumpFrequency < maxJumpFrequency)
             {
                 jumpFrequency++;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -150,6 +120,64 @@ namespace ggj2018
             {
                 obstacle.OnCollisionCharcter(this);
             }
+        }
+
+
+        const float reboundForce = 1000.0f;
+        public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
+        {
+            Vector3 direction = this.transform.position - charcterBehavior.transform.position;
+            this.rb.AddForce(direction.normalized * reboundForce);
+        }
+
+
+        bool GetJumpInput()
+        {
+            return Input.GetButtonDown(jump);
+        }
+
+        float GetWalkVertical()
+        {
+            bool keyCodeW = Input.GetKey(KeyCode.W);
+            bool keyCodeS = Input.GetKey(KeyCode.S);
+
+            var vertical = 0.0f;
+
+            if (keyCodeW || keyCodeS)
+            {
+                if (keyCodeS)
+                    vertical = -1.0f;
+                if (keyCodeW)
+                    vertical = 1.0f;
+            }
+            else
+            {
+                vertical = -Input.GetAxisRaw(this.vertical);
+            }
+
+            return vertical;
+        }
+
+        float GetWalkHorizontal()
+        {
+            bool keyCodeA = Input.GetKey(KeyCode.A);
+            bool keyCodeD = Input.GetKey(KeyCode.D);
+
+            var horizontal = 0.0f;
+
+            if (keyCodeA || keyCodeD)
+            {
+                if (keyCodeA)
+                    horizontal = -1.0f;
+                if (keyCodeD)
+                    horizontal = 1.0f;
+            }
+            else
+            {
+                horizontal = Input.GetAxisRaw(this.horizontal);
+            }
+
+            return horizontal;
         }
     }
 }
