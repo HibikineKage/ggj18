@@ -16,6 +16,7 @@ namespace ggj2018
         Rigidbody rb;
         Animator childAnimator;
         int jumpFrequency;
+        int playerNumber;
         /// <summary>
         /// ダメージを受けている間のカウンター
         /// 毎フレーム減り続け、ゼロになると起き上がる
@@ -34,6 +35,8 @@ namespace ggj2018
 
         public void Setup(int playerNumber)
         {
+            this.playerNumber = playerNumber;
+
             var camera = GetComponentInChildren<Camera>();
 
             float x = playerNumber % 2 == 0 ? 0 : 0.5f;
@@ -110,11 +113,11 @@ namespace ggj2018
                 }
             }
         }
-        void Damaged(IDamage damage)
+        public void Damaged(int damage)
         {
             rb.velocity = Vector3.zero;
 
-            damage.OnDamaged(this);
+            ScoreManager.Instance.AddBadScore(playerNumber, damage);
         }
 
         void OnCollisionEnter(Collision collision)
