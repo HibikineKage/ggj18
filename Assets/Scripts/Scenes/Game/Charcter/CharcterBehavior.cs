@@ -46,5 +46,14 @@ namespace ggj2018
             Debug.DrawLine(transform.position, transform.position - transform.up * groundCheckRayDirection);
             if (result) jumpFrequency = 0;
         }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            var obstacle = collision.gameObject.GetComponent<IObstacle>();
+            if (obstacle != null)
+            {
+                obstacle.OnCollisionCharcter(this);
+            }
+        }
     }
 }
