@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65110209634912686}
   - component: {fileID: 114351971689660840}
   m_Layer: 0
-  m_Name: PUSHILIN_Police_car
+  m_Name: Police_car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
