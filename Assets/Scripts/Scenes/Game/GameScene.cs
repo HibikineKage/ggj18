@@ -52,6 +52,14 @@ namespace ggj2018
             }
         }
 
+        public void OnGoal(int playerNum)
+        {  
+            var dataManager = ScenesDataManager.Instance;
+            var stage = dataManager.GetPlayerStage(playerNum);
+            _letters[playerNum].Show(dataManager.CurrentStageNum, stage.Level);
+            _ranks[playerNum].Show(stage.Rank);
+        }
+
         void OnTimeup()
         {   
             var dataManager = ScenesDataManager.Instance;
@@ -61,17 +69,20 @@ namespace ggj2018
                     dataManager.AddStageResult(i, new ggj2018.ScenesDataManager.PlayerStageResult(){
                         Rank = rank,
                         RemainTime = 0,
-                        BadScore = ScoreManager.Instance.GetBadScore(i),
+                        Damage = ScoreManager.Instance.GetBadScore(i),
                     });
                 }
             }
                 
             if (dataManager.IsAllPlayerGoal()) {
+                TimeManager.Instance.StopGame();
+
                 StartCoroutine(NextWaitCoroutine());
 
                 for (int i = 0; i < GameConstants.PlayerNum; i++) {
-                    _letters[i].Show(dataManager.CurrentStageNum, 0);
-                    _ranks[i].Show(dataManager.GetPlayerStage(i).Rank);
+                    var stage = dataManager.GetPlayerStage(i);
+                    _letters[i].Show(dataManager.CurrentStageNum, stage.Level);
+                    _ranks[i].Show(stage.Rank);
                 }
             }
         }
