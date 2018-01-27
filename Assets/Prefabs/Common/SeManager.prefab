@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4034272905173322}
   - component: {fileID: 82097502448835670}
   m_Layer: 0
-  m_Name: ssquirrel2
+  m_Name: spenguin2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 4579067737063814}
   - component: {fileID: 82561887284019402}
   m_Layer: 0
-  m_Name: ssquirrel
+  m_Name: spenguin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 4635050261851390}
   - component: {fileID: 82522469581240358}
   m_Layer: 0
-  m_Name: sllama2
+  m_Name: scat2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 4742718545220936}
   - component: {fileID: 82911253895670970}
   m_Layer: 0
-  m_Name: sllama
+  m_Name: scat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -761,7 +761,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c372facdddcdc470c873d0c0901167e3,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0156ff3eb1f914f118904ed774908b3f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0e67a59590b4e4e43807cd3c80110ad5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1490,7 +1490,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c372facdddcdc470c873d0c0901167e3,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5a5ce85e9534b4ea5aadfd7ecab4fb3f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 455f7d781718d4893b94d1d3ee43e40a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1571,7 +1571,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c372facdddcdc470c873d0c0901167e3,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 33af024448afa45be9f42930736270f2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 72f5fe80fbf544930bb8b0036d2831e9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2219,7 +2219,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: c372facdddcdc470c873d0c0901167e3,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0ca9aa1f442554045a24624129a64398, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3e6f4d90d36e04598bf238ef900c8bf6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2386,10 +2386,10 @@ MonoBehaviour:
   sgoat2: {fileID: 82141655013494546}
   spigeon: {fileID: 82117411003942802}
   spigeon2: {fileID: 82674786094052020}
-  ssquirrel: {fileID: 82561887284019402}
-  ssquirrel2: {fileID: 82097502448835670}
-  salpaca: {fileID: 82911253895670970}
-  salpaca2: {fileID: 82522469581240358}
+  spenguin: {fileID: 82561887284019402}
+  spenguin2: {fileID: 82097502448835670}
+  scat: {fileID: 82911253895670970}
+  scat2: {fileID: 82522469581240358}
   sstage1Comp: {fileID: 82278665152974506}
   sstage2Comp: {fileID: 82404567719517516}
   sstage3Comp: {fileID: 82042104960759368}
