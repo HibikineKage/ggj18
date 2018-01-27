@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
-
+	enum MoveState
+	{
+		E_Blank , E_Check1, E_Check2, E_Check3, E_Check4, E_Check5
+	}
 	private float Speed;
 	private float SpeedVariation;
 	private float RotationSpeed;
@@ -13,6 +16,11 @@ public class CameraMove : MonoBehaviour {
 	private bool Check4;
 	private bool Check5;
 	public Camera camera;
+
+
+	MoveState m_State = MoveState.E_Check1;
+	MoveState m_StateOld = MoveState.E_Blank;
+	bool m_Enter = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +33,22 @@ public class CameraMove : MonoBehaviour {
 		Check4 = false;
 		Check5 = false;
 	}
-	
+
+	void StateChart()
+	{
+		if (m_StateOld != m_State)
+		{
+			m_StateOld = m_State;
+			m_Enter = true;
+		}
+		else {
+			m_Enter = false;
+		}
+
+
+
+	}
+
 	// Update is called once per frame
 	void Update () {
 		MoveForward ();
