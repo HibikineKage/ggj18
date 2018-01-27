@@ -88,13 +88,13 @@ namespace ggj2018
 			if (keyCodeW || keyCodeS)
 			{
 				if (keyCodeW)
-					vertical = 1.0f;
-				if (keyCodeS)
 					vertical = -1.0f;
+				if (keyCodeS)
+					vertical = 1.0f;
 			}
 			else
 			{
-				vertical = Input.GetAxisRaw(this.vertical);
+				vertical = -Input.GetAxisRaw(this.vertical);
 			}
 
 			var deltaForce = (transform.forward * vertical + transform.right * horizontal).normalized * force;
