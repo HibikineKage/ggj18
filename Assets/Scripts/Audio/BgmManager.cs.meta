@@ -1,11 +1,19 @@
 fileFormatVersion: 2
 guid: e685ab9331c37457b97626f8f1c2d141
-timeCreated: 1516985632
+timeCreated: 1517030196
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mainBGM: {instanceID: 0}
+  - startBGM: {instanceID: 0}
+  - charSelectBGM: {instanceID: 0}
+  - resultBGM: {instanceID: 0}
+  - stage1Background: {fileID: 8300000, guid: b0e9d81cb710d44cbb0c346c4eb14eb2, type: 3}
+  - stage2Background: {fileID: 8300000, guid: 1331c5bea9951453a87c441f1dcf2f5d, type: 3}
+  - stage3Background: {fileID: 8300000, guid: b781a0cb2f8ba4d0f9c8e31a2afd8889, type: 3}
+  - stage4Background: {fileID: 8300000, guid: 0620486a8e65f47f7bb38db58410301b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

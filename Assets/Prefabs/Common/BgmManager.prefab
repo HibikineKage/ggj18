@@ -51,3 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e685ab9331c37457b97626f8f1c2d141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainBGM: {fileID: 0}
+  startBGM: {fileID: 0}
+  charSelectBGM: {fileID: 0}
+  resultBGM: {fileID: 0}
+  stage1Background: {fileID: 8300000, guid: b0e9d81cb710d44cbb0c346c4eb14eb2, type: 3}
+  stage2Background: {fileID: 8300000, guid: 1331c5bea9951453a87c441f1dcf2f5d, type: 3}
+  stage3Background: {fileID: 8300000, guid: b781a0cb2f8ba4d0f9c8e31a2afd8889, type: 3}
+  stage4Background: {fileID: 8300000, guid: 0620486a8e65f47f7bb38db58410301b, type: 3}
