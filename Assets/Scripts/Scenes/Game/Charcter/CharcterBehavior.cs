@@ -13,10 +13,40 @@ namespace ggj2018
         public float groundCheckRayDirection;
 
         Rigidbody rb;
+        Camera cam;
         int jumpFrequency;
         void Start()
         {
             rb = GetComponent<Rigidbody>();
+        }
+
+        /// <summary>
+        /// プレイヤーの初期化
+        /// </summary>
+        /// <param name="playerNumber"></param>
+        public void Setup(int playerNumber = 0)
+        {
+            cam = GetComponentInChildren<Camera>();
+
+            int viewportWidth = Screen.width / 2;
+            int viewportHeight = Screen.height / 2;
+
+            // カメラの位置を設定する
+            switch(playerNumber)
+            {
+                case 0:
+                    cam.rect = new Rect(0, 0, viewportWidth, viewportHeight);
+                    break;
+                case 1:
+                    cam.rect = new Rect(viewportWidth, 0, viewportWidth, viewportHeight);
+                    break;
+                case 2:
+                    cam.rect = new Rect(0, viewportHeight, viewportWidth, viewportHeight);
+                    break;
+                case 3:
+                    cam.rect = new Rect(viewportWidth, viewportHeight, viewportWidth, viewportHeight);
+                    break;
+            }
         }
 
         void Update()
