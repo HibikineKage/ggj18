@@ -2,7 +2,7 @@
 
 namespace ggj2018
 {
-    public class ScenesDataManager : SceneBase<ScenesDataManager>
+    public class ScenesDataManager : SimpleSingleton<ScenesDataManager>
     {
     }
 }
