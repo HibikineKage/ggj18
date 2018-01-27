@@ -352,8 +352,7 @@ Prefab:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 81057936422610310, guid: 3156e68a20b3f3e41878c2666e521bbe, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3156e68a20b3f3e41878c2666e521bbe, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &530459526 stripped
@@ -405,8 +404,7 @@ Prefab:
       propertyPath: m_Name
       value: Player4
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 81057936422610310, guid: 3156e68a20b3f3e41878c2666e521bbe, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3156e68a20b3f3e41878c2666e521bbe, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &660562487 stripped
@@ -457,8 +455,7 @@ Prefab:
       propertyPath: m_Name
       value: Player3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 81057936422610310, guid: 3156e68a20b3f3e41878c2666e521bbe, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3156e68a20b3f3e41878c2666e521bbe, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &813437661
@@ -569,8 +566,7 @@ Prefab:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 81057936422610310, guid: 3156e68a20b3f3e41878c2666e521bbe, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3156e68a20b3f3e41878c2666e521bbe, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1193631598 stripped
