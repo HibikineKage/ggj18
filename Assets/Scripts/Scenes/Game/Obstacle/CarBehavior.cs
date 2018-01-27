@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ggj2018
 {
-    public class PoliceCarBehavior : MonoBehaviour, IObstacle
+    public class CarBehavior : MonoBehaviour, IObstacle
     {
         [SerializeField]
         float forwardForce;
