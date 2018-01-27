@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace ggj2018
 {
-    public class Disappear : MonoBehaviour,  IDamage
+    public class Disappear : MonoBehaviour
     {
         const float disappearTime = 2.0f;
         public float Damage()

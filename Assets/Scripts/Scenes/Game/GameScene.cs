@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 namespace ggj2018
 {

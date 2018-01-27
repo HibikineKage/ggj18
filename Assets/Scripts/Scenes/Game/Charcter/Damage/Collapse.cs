@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace ggj2018
 {
-    public class Collapse : MonoBehaviour , IDamage 
+    public class Collapse : MonoBehaviour 
 	{
         const float collapseTime = 5.0f;
         public float Damage()
