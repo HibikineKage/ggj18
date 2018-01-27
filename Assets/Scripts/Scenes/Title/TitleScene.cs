@@ -7,7 +7,11 @@ namespace ggj2018
     {
         void Update()
         {
-            if (Input.GetButtonDown("Pad0Jump") || Input.GetKey(KeyCode.Space))
+            if (Input.GetButtonDown("Pad0Jump") || 
+                Input.GetButtonDown("Pad1Jump") || 
+                Input.GetButtonDown("Pad2Jump") ||
+                Input.GetButtonDown("Pad3Jump") ||
+                Input.GetKey(KeyCode.Space))
             {
                 var dataManager = ScenesDataManager.Instance;
                 dataManager.InitStage();

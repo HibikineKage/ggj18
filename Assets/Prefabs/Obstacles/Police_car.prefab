@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692262815000694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -313.10104, y: 94.29955, z: 122.543106}
+  m_LocalPosition: {x: 101.6, y: 5.11, z: 26.746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4872966211127504}
@@ -68,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 1300127674867814}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7.2901154, y: 7.290116, z: 7.290116}
   m_Children: []
   m_Father: {fileID: 4438919305832238}
   m_RootOrder: 0
@@ -127,7 +127,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65110209634912686
 BoxCollider:
@@ -155,3 +155,4 @@ MonoBehaviour:
   forwardForce: 1000
   forwardHitCheckDistance: 9.68
   maxVelocity: 25
+  damage: 10

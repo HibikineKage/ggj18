@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Texts/mission4　text-100.txt.meta
 guid: 362010e53393b42b685e152ba8a15821
 timeCreated: 1517047718
+=======
+guid: fb31878cbc0ee7f46831ab7f8e792433
+timeCreated: 1517046517
+>>>>>>> a627bbe43165d641fd489f87c1ef1e7bf11d5552:Assets/Texts/mission4　text-100.txt.meta
 licenseType: Free
 TextScriptImporter:
   externalObjects: {}
