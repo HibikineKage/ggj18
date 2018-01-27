@@ -37,6 +37,25 @@ namespace ggj2018
 
             public void AddStage(PlayerStageResult stage)
             {
+                var score = 1000 / stage.Rank * 1.5f;
+                if (score <= 200) {
+                    stage.Level = 0;
+                }
+                else if (score <= 400) {
+                    stage.Level = 1;
+                }
+                else if (score <= 600) {
+                    stage.Level = 2;
+                }
+                else if (score <= 800) {
+                    stage.Level = 3;
+                }
+                else if (score < 1000) {
+                    stage.Level = 4;
+                }
+                else {
+                    stage.Level = 5;
+                }
                 _stages.Add(stage);
             }
         }
@@ -91,7 +110,7 @@ namespace ggj2018
                     rank++;
                 }
             }
-            return rank;
+            return rank + 1;
         }
 
         public bool IsPlayerGoal(int playerNum)
