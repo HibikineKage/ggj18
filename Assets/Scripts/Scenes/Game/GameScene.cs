@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 namespace ggj2018
 {
@@ -12,14 +13,24 @@ namespace ggj2018
         private CharcterBehavior[] _charcters=new CharcterBehavior[GameConstants.PlayerNum];
 
         [SerializeField]
+        private LetterBehaviour[] _letters=new LetterBehaviour[GameConstants.PlayerNum];
+
+        [SerializeField]
+        private RankBehaviour[] _ranks=new RankBehaviour[GameConstants.PlayerNum];
+
+        [SerializeField]
         private Text _remainTime;
 
         void Start()
         {
+            _charcters = GetComponentsInChildren<CharcterBehavior>();
             for (var i = 0; i < GameConstants.PlayerNum; i++) 
             {
                 _charcters[i].Setup(i);
             }
+
+            _letters = GetComponentsInChildren<LetterBehaviour>(includeInactive:true);
+            _ranks = GetComponentsInChildren<RankBehaviour>(includeInactive:true);
 
             var timeManager = TimeManager.Instance;
             timeManager.OnTimeup += OnTimeup;
@@ -57,9 +68,22 @@ namespace ggj2018
             }
                 
             if (dataManager.IsAllPlayerGoal()) {
-                dataManager.NextStage();
-                LoadNextScene();
+                StartCoroutine(NextWaitCoroutine());
+
+                for (int i = 0; i < GameConstants.PlayerNum; i++) {
+                    _letters[i].Show(dataManager.CurrentStageNum, 0);
+                    _ranks[i].Show(dataManager.GetPlayerStage(i).Rank);
+                }
             }
+        }
+
+        private IEnumerator NextWaitCoroutine() 
+        {  
+            yield return new WaitForSeconds (5f);  
+
+            var dataManager = ScenesDataManager.Instance;
+            dataManager.NextStage();
+            LoadNextScene();
         }
             
         void LoadNextScene()
