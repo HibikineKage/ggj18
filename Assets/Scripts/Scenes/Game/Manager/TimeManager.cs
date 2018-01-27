@@ -11,7 +11,7 @@ namespace ggj2018
 
         public int RemainSec {
             get {
-                return (int)_remainSec; 
+                return (int)_remainSec;
             }
         }
 
