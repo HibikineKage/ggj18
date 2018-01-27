@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 103647873}
   - component: {fileID: 103647875}
   - component: {fileID: 103647874}
+  - component: {fileID: 103647876}
   m_Layer: 0
   m_Name: GameScene
   m_TagString: Untagged
@@ -187,6 +188,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2c00928893c4abc9ca41fcfe29e162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &103647876
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103647871}
+  m_Enabled: 1
 --- !u!114 &206406265 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114339846104659976, guid: 3156e68a20b3f3e41878c2666e521bbe,
