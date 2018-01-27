@@ -122,9 +122,12 @@ namespace ggj2018
             }
         }
 
-        void OnCollisionCharcter(CharcterBehavior charcterBehavior)
+
+        const float reboundForce = 1000.0f;
+        public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
         {
-            
+            Vector3 direction = this.transform.position - charcterBehavior.transform.position;
+            this.rb.AddForce(direction.normalized * reboundForce);
         }
 
 
