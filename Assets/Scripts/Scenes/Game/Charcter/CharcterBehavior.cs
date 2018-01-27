@@ -36,8 +36,8 @@ namespace ggj2018
         {
             var camera = GetComponentInChildren<Camera>();
 
-            float x = (playerNumber % 2 == 0 ? 0 : 0.5f);
-            float y = (playerNumber / 2 == 0 ? 0 : 0.5f);
+            float x = playerNumber % 2 == 0 ? 0 : 0.5f;
+            float y = playerNumber / 2 == 0 ? 0.5f : 0;
             float viewportWidth = .5f;
             float viewportHeight = .5f;
 
@@ -137,9 +137,9 @@ namespace ggj2018
 
             if (keyCodeW || keyCodeS)
             {
-                if (keyCodeW)
-                    vertical = -1.0f;
                 if (keyCodeS)
+                    vertical = -1.0f;
+                if (keyCodeW)
                     vertical = 1.0f;
             }
             else
@@ -154,7 +154,6 @@ namespace ggj2018
         {
             bool keyCodeA = Input.GetKey(KeyCode.A);
             bool keyCodeD = Input.GetKey(KeyCode.D);
-            print(keyCodeA);
 
             var horizontal = 0.0f;
 
