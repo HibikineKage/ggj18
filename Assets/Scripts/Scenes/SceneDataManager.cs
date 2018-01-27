@@ -69,6 +69,12 @@ namespace ggj2018
             }
         }
 
+        public bool IsInitPlayers {
+            get {
+                return _players != null;
+            }
+        }
+
         public void AddStageResult(int playerNum, PlayerStageResult stage)
         {
             _players[playerNum].AddStage(stage);

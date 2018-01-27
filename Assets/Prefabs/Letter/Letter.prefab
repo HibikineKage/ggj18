@@ -48,7 +48,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 300385756fe9e418baa8fc8192b2fb57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf3b5535173ce42d3bfb14bc424b9c4d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -68,33 +68,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loveletterSprites:
-  - {fileID: 21300000, guid: c146521bfd8004bfb93b6b7fea1aa01f, type: 3}
-  - {fileID: 21300000, guid: 1d5a12da6249547febedde580079e5fd, type: 3}
-  - {fileID: 21300000, guid: 84851cc1f8c724669b86b0fdfb0494e1, type: 3}
-  - {fileID: 21300000, guid: c8f8ecaec296d4af6838af9663f24f2b, type: 3}
-  - {fileID: 21300000, guid: 6078dcba5388742b28b7b7e86dec0606, type: 3}
-  - {fileID: 21300000, guid: 300385756fe9e418baa8fc8192b2fb57, type: 3}
+  - {fileID: 21300000, guid: b3b8baa0f5f494097bdfa3a87e297e53, type: 3}
+  - {fileID: 21300000, guid: 820a41af4e7bc4754b09ff61c45b929d, type: 3}
+  - {fileID: 21300000, guid: 2074ef27713a6459db5712cb67b2bb30, type: 3}
+  - {fileID: 21300000, guid: c536801ec2ead409c997421c3ade4e17, type: 3}
+  - {fileID: 21300000, guid: 5f726e2268a734f6f8144e485c767d65, type: 3}
+  - {fileID: 21300000, guid: bf3b5535173ce42d3bfb14bc424b9c4d, type: 3}
   _posterSprites:
-  - {fileID: 21300000, guid: c146521bfd8004bfb93b6b7fea1aa01f, type: 3}
-  - {fileID: 21300000, guid: 1d5a12da6249547febedde580079e5fd, type: 3}
-  - {fileID: 21300000, guid: 84851cc1f8c724669b86b0fdfb0494e1, type: 3}
-  - {fileID: 21300000, guid: c8f8ecaec296d4af6838af9663f24f2b, type: 3}
-  - {fileID: 21300000, guid: 6078dcba5388742b28b7b7e86dec0606, type: 3}
-  - {fileID: 21300000, guid: 300385756fe9e418baa8fc8192b2fb57, type: 3}
+  - {fileID: 21300000, guid: d404b219dd3fa478e845f8dde7bf12bc, type: 3}
+  - {fileID: 21300000, guid: b4f79c763d46b4134999ce919a689fc7, type: 3}
+  - {fileID: 21300000, guid: c5f6069bbc424491fa1f6b9a3084289a, type: 3}
+  - {fileID: 21300000, guid: ba58bc4a4afac49e09b14177443ab997, type: 3}
+  - {fileID: 21300000, guid: 954f8e97048ea46c2b4bac47e4d34dd7, type: 3}
+  - {fileID: 21300000, guid: 7df9ffb3410e64f92b21e23b44680e0d, type: 3}
   _propagandaSprites:
-  - {fileID: 21300000, guid: 7eb802f45a82c472f976116f83cebd6d, type: 3}
-  - {fileID: 21300000, guid: 4baf7a724578940ae858e5fded151914, type: 3}
-  - {fileID: 21300000, guid: 6db5836cd6ea5457e92cafb5ba5d8b09, type: 3}
-  - {fileID: 21300000, guid: dbe97d2335fbe4950ad1d6e36b479f30, type: 3}
-  - {fileID: 21300000, guid: f9ed962ef8e504bc6a26ae01a45cbd14, type: 3}
-  - {fileID: 21300000, guid: b387a9c1c084441b091269a015579ec1, type: 3}
+  - {fileID: 21300000, guid: d404b219dd3fa478e845f8dde7bf12bc, type: 3}
+  - {fileID: 21300000, guid: b4f79c763d46b4134999ce919a689fc7, type: 3}
+  - {fileID: 21300000, guid: c5f6069bbc424491fa1f6b9a3084289a, type: 3}
+  - {fileID: 21300000, guid: ba58bc4a4afac49e09b14177443ab997, type: 3}
+  - {fileID: 21300000, guid: 954f8e97048ea46c2b4bac47e4d34dd7, type: 3}
+  - {fileID: 21300000, guid: 7df9ffb3410e64f92b21e23b44680e0d, type: 3}
   _grandsonSprites:
-  - {fileID: 21300000, guid: 7eb802f45a82c472f976116f83cebd6d, type: 3}
-  - {fileID: 21300000, guid: 4baf7a724578940ae858e5fded151914, type: 3}
-  - {fileID: 21300000, guid: 6db5836cd6ea5457e92cafb5ba5d8b09, type: 3}
-  - {fileID: 21300000, guid: dbe97d2335fbe4950ad1d6e36b479f30, type: 3}
-  - {fileID: 21300000, guid: f9ed962ef8e504bc6a26ae01a45cbd14, type: 3}
-  - {fileID: 21300000, guid: b387a9c1c084441b091269a015579ec1, type: 3}
+  - {fileID: 21300000, guid: d404b219dd3fa478e845f8dde7bf12bc, type: 3}
+  - {fileID: 21300000, guid: b4f79c763d46b4134999ce919a689fc7, type: 3}
+  - {fileID: 21300000, guid: c5f6069bbc424491fa1f6b9a3084289a, type: 3}
+  - {fileID: 21300000, guid: ba58bc4a4afac49e09b14177443ab997, type: 3}
+  - {fileID: 21300000, guid: 954f8e97048ea46c2b4bac47e4d34dd7, type: 3}
+  - {fileID: 21300000, guid: 7df9ffb3410e64f92b21e23b44680e0d, type: 3}
 --- !u!222 &222008189561740708
 CanvasRenderer:
   m_ObjectHideFlags: 1
