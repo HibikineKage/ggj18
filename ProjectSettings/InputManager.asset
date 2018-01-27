@@ -20,7 +20,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Pad0Vertical
     descriptiveName: 
@@ -36,7 +36,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Pad0Fire1
     descriptiveName: 
@@ -52,7 +52,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Pad0Jump
     descriptiveName: 
@@ -68,7 +68,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Pad1Horizontal
     descriptiveName: 
@@ -84,7 +84,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Pad1Vertical
     descriptiveName: 
@@ -100,7 +100,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Pad1Fire1
     descriptiveName: 
@@ -116,7 +116,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Pad1Jump
     descriptiveName: 
@@ -132,7 +132,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Pad2Horizontal
     descriptiveName: 
@@ -148,7 +148,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 3
   - serializedVersion: 3
     m_Name: Pad2Vertical
     descriptiveName: 
@@ -164,7 +164,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 3
   - serializedVersion: 3
     m_Name: Pad2Fire1
     descriptiveName: 
@@ -180,7 +180,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 3
   - serializedVersion: 3
     m_Name: Pad2Jump
     descriptiveName: 
@@ -196,7 +196,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 3
   - serializedVersion: 3
     m_Name: Pad3Horizontal
     descriptiveName: 
@@ -212,7 +212,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 4
   - serializedVersion: 3
     m_Name: Pad3Vertical
     descriptiveName: 
@@ -228,7 +228,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 4
   - serializedVersion: 3
     m_Name: Pad3Fire1
     descriptiveName: 
@@ -244,7 +244,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 4
   - serializedVersion: 3
     m_Name: Pad3Jump
     descriptiveName: 
@@ -260,4 +260,4 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 4
