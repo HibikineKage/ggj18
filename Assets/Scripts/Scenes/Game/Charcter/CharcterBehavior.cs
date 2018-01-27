@@ -46,6 +46,9 @@ namespace ggj2018
             vertical = "Pad" + playerNumber + "Vertical";
             horizontal = "Pad" + playerNumber + "Horizontal";
             jump = "Pad" + playerNumber + "Jump";
+
+            var _materialSwitcher = GetComponent<CharcterMaterialSwitcher>();
+            _materialSwitcher.Setup(playerNumber);
         }
 
         void Update()
