@@ -7,26 +7,28 @@ namespace ggj2018
 {
     public class CarBehavior : MonoBehaviour, IObstacle
     {
-        [SerializeField]
-        float forwardForce;
-        [SerializeField]
-        float forwardHitCheckDistance;
-        [SerializeField]
-        float maxVelocity;
-        [SerializeField]
-        int damage;
+        public float forwardForce;
+        public float forwardHitCheckDistance;
+        public float maxVelocity;
+        public int damage;
 
+        float unavailableCount = 0;
         Rigidbody rb;
+        Collider col;
         public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
         {
-            charcterBehavior.StunTimer = 1;
-            charcterBehavior.SetAnimationTrigger("");
+            print("HitCar");
+            charcterBehavior.StunTimer = 4;
+            charcterBehavior.SetAnimationTrigger("Collapse");
             charcterBehavior.Damaged(damage);
+            col.enabled = false;
+            unavailableCount = 4;
         }
 
         void Start()
         {
             rb = GetComponent<Rigidbody>();
+            col = GetComponent<Collider>();
         }
 
         void Update()
@@ -41,23 +43,20 @@ namespace ggj2018
             Physics.Raycast(transform.position, transform.forward,out hit, forwardHitCheckDistance);
             Debug.DrawRay(transform.position, transform.forward*forwardHitCheckDistance);
             if (hit.collider&&hit.collider.tag != "Player") Broken();//キャラクター意外にヒットしたら破壊
+
+            if (unavailableCount > 0)
+            {
+                unavailableCount -= Time.deltaTime;
+                if (unavailableCount <= 0)
+                {
+                    col.enabled = true;
+                }
+            }
         }
 
         void Broken()
         {
             Destroy(gameObject);
-        }
-
-        const float disappearTime = 2.0f;
-        public float Damage()
-        {
-            return 5.0f;
-        }
-        public void OnDamaged(CharcterBehavior charcterBehavior)
-        {
-
-            charcterBehavior.StunTimer = disappearTime;
-            charcterBehavior.SetAnimationTrigger("Disappear");
         }
     }
 }
