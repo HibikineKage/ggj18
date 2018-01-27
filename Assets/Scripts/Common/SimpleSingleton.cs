@@ -3,16 +3,26 @@
     public class SimpleSingleton <T>
         where T : SimpleSingleton<T>, new()
     {
-        public static T Instance { get; private set; }
+        private  static T _Instance;
+
+        public static T Instance
+        { 
+            get {
+                if (_Instance == null) {
+                    Init();
+                }
+                return _Instance;
+            }
+        }
 
         public static void Init()
         {
-            Instance = new T();
+            _Instance = new T();
         }
 
         public static void Kill()
         {
-            Instance = null;          
+            _Instance = null;          
         }
     }
 }
