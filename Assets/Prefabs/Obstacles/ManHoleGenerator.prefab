@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09e29f4beede484f956b1ef40d8fb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Obstacle: {fileID: 0}
+  Obstacle: {fileID: 1677272000058896, guid: 5cd8b6be92ca49a43920d8aa9c118c21, type: 2}
   GenerateRate: 8.45
   RandomRange: 21.65
   RealtimeGenerate: 0

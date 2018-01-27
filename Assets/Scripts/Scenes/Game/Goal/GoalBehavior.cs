@@ -24,12 +24,23 @@ namespace ggj2018
             dataManager.AddStageResult(playerNum, new ggj2018.ScenesDataManager.PlayerStageResult(){
                 Rank = dataManager.GetCurrentRank(),
                 RemainTime = TimeManager.Instance.RemainSec,
-                BadScore = ScoreManager.Instance.GetBadScore(playerNum),
+                Damage = ScoreManager.Instance.GetBadScore(playerNum),
             });
+                
+            GameScene.Instance.OnGoal(playerNum);
+
             if (dataManager.IsAllPlayerGoal()) {
-                dataManager.NextStage();
-                LoadNextScene();
+                StartCoroutine(NextWaitCoroutine());
             }
+        }
+
+        private IEnumerator NextWaitCoroutine() 
+        {  
+            yield return new WaitForSeconds (5f);  
+
+            var dataManager = ScenesDataManager.Instance;
+            dataManager.NextStage();
+            LoadNextScene();
         }
 
         void LoadNextScene()
