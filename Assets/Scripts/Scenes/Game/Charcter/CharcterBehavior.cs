@@ -57,10 +57,10 @@ namespace ggj2018
 
         void Walk()
         {
-			bool keyCodeA = Input.GetKey(KeyCode.A);
-			bool keyCodeD = Input.GetKey(KeyCode.D);
-			bool keyCodeW = Input.GetKey(KeyCode.W);
-			bool keyCodeS = Input.GetKey(KeyCode.S);
+			bool keyCodeA = Input.GetKey(KeyCode.A) || Input.GetAxis(this.horizontal) < 0;
+			bool keyCodeD = Input.GetKey(KeyCode.D) || Input.GetAxis(this.horizontal) > 0;
+			bool keyCodeW = Input.GetKey(KeyCode.W) || Input.GetAxis(this.vertical) < 0;
+			bool keyCodeS = Input.GetKey(KeyCode.S) || Input.GetAxis(this.vertical) > 0;
 
 			var vertical = 0.0f;
 			var horizontal = 0.0f;
@@ -114,6 +114,7 @@ namespace ggj2018
             collapse,
             disappear
         }
+
         const float collapseTime=5.0f;
         const float disappearTime=2.0f;
         void Damaged(DamagePattern damagePattern)
