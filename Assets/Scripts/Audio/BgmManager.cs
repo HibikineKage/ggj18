@@ -38,7 +38,7 @@ namespace ggj2018
 			charSelectBGM.Play ();
 		}
 
-		public void ResultBGM()
+		public void PlayResultBGM()
 		{
 			resultBGM.Play ();
 		}
