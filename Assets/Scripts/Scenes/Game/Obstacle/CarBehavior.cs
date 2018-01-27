@@ -27,6 +27,7 @@ namespace ggj2018
 
         void Update()
         {
+			SeManager.Instance.PlayCar ();
             if (rb.velocity.sqrMagnitude <= maxVelocity * maxVelocity)
             {
                 rb.AddForce(forwardForce * transform.forward * Time.deltaTime);

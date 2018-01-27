@@ -13,6 +13,7 @@ namespace ggj2018
         public int maxJumpFrequency;
         public float groundCheckRayDirection;
 
+
         Rigidbody rb;
         Animator childAnimator;
         int jumpFrequency;
@@ -80,6 +81,7 @@ namespace ggj2018
             {
                 jumpFrequency++;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+				SeManager.Instance.PlayGoat ();
             }
 
             var result = Physics.Raycast(transform.position, -transform.up, groundCheckRayDirection);
