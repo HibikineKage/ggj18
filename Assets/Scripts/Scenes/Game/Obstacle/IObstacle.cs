@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GGJ2018A.Scenes.Game
+namespace ggj2018
 {
     public interface IObstacle
     {

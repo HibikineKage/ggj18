@@ -1,4 +1,4 @@
-﻿namespace GGJ2018A.Common
+﻿namespace ggj2018
 {
     public class SimpleSingleton <T>
         where T : SimpleSingleton<T>, new()

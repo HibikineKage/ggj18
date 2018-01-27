@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace GGJ2018A.Scenes.Game
+namespace ggj2018
 {
-    public class GameScene : Common.SceneBase<GameScene>
+    public class GameScene : SceneBase<GameScene>
     {
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace GGJ2018A.Scenes
+namespace ggj2018
 {
-    public class ScenesDataManager : Common.SceneBase<ScenesDataManager>
+    public class ScenesDataManager : SceneBase<ScenesDataManager>
     {
     }
 }

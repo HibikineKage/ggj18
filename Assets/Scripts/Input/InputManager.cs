@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace GGJ2018A.Input
+namespace ggj2018
 {
-    public class InputManager : Common.MonoSingleton<InputManager>
+    public class InputManager : MonoSingleton<InputManager>
     {
     }
 }

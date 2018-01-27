@@ -1,22 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace GGJ2018A.Scenes.Game
+namespace ggj2018
 {
     public class GoalBehavior : MonoBehaviour
     {
-        [SerializeField]
-        private float _moveSpeed = 1f;
 
-        // Use this for initialization
         void Start()
         {
+
         }
 
-        // Update is called once per frame
         void Update()
         {
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Player")
+            {
+                Goal();
+            }
+        }
+
+        void Goal()
+        {
+            LoadNextScene();
+        }
+
+        void LoadNextScene()
+        {
+            int loadingSceneIndex = SceneUtility.GetBuildIndexByScenePath(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(loadingSceneIndex + 1);
         }
     }
 }

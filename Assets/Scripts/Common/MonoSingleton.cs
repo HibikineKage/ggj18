@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GGJ2018A.Common
+namespace ggj2018
 {
     public class MonoSingleton <T> : MonoBehaviour
         where T : MonoSingleton<T>

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace GGJ2018A.Audio
+namespace ggj2018
 {
-    public class TimeManager : Common.MonoSingleton<TimeManager>
+    public class TimeManager : MonoSingleton<TimeManager>
     {
     }
 }

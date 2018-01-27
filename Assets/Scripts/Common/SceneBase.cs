@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GGJ2018A.Common
+namespace ggj2018
 {
     public class SceneBase <T> : MonoSingleton<T>
         where T : SceneBase<T>

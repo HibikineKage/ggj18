@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace GGJ2018A.Audio
+namespace ggj2018
 {
-    public class ScoreManager : Common.MonoSingleton<ScoreManager>
+    public class ScoreManager : MonoSingleton<ScoreManager>
     {
     }
 }

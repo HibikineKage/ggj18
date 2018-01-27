@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace GGJ2018A.Audio
+namespace ggj2018
 {
-    public class SeManager : Common.MonoSingleton<SeManager>
+    public class SeManager : MonoSingleton<SeManager>
     {
     }
 }

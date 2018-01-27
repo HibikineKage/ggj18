@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace GGJ2018A.Title
+namespace ggj2018
 {
-    public class TitleScene : Common.MonoSingleton<TitleScene>
+    public class TitleScene : MonoSingleton<TitleScene>
     {
     }
 }
