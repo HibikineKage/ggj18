@@ -28,7 +28,7 @@ namespace ggj2018
             childAnimator = transform.GetComponentInChildren<Animator>();
         }
 
-        void Setup(int playerNumber)
+        public void Setup(int playerNumber)
         {
             var camera = GetComponentInChildren<Camera>();
 
@@ -51,7 +51,7 @@ namespace ggj2018
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.A)) { childAnimator.SetTrigger("Collapse"); }
+            if (Input.GetKeyDown(KeyCode.T)) { childAnimator.SetTrigger("Collapse"); }
             if (Input.GetKeyDown(KeyCode.Q)) { childAnimator.SetTrigger("Disappear"); }
             if (stunTimer <= 0)
             {
@@ -114,9 +114,29 @@ namespace ggj2018
             if (result) jumpFrequency = 0;
         }
 
-        void Damaged(float stunTime)
+        enum DamagePattern
         {
-            stunTimer = stunTime;
+            collapse,
+            disappear
+        }
+        const float collapseTime=5.0f;
+        const float disappearTime=2.0f;
+        void Damaged(DamagePattern damagePattern)
+        {
+            rb.velocity = Vector3.zero;
+
+            switch (damagePattern)
+            {
+                case DamagePattern.collapse:
+                    stunTimer = collapseTime;
+                    childAnimator.SetTrigger("Collapse");
+                    break;
+
+                case DamagePattern.disappear:
+                    stunTimer = disappearTime;
+                    childAnimator.SetTrigger("Disappear");
+                    break;
+            }
         }
 
         void OnCollisionEnter(Collision collision)
