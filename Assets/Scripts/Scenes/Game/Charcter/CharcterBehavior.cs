@@ -65,6 +65,9 @@ namespace ggj2018
             {
                 Walk();
                 Jump();
+            }else
+            {
+                stunTimer -= Time.deltaTime;
             }
         }
 
