@@ -62,11 +62,39 @@ namespace ggj2018
 
         void Walk()
         {
-            var vertical = Input.GetAxisRaw(this.vertical);
-            Debug.Log(vertical);
-            var horizontal = Input.GetAxisRaw(this.horizontal);
-            
-            var deltaForce = (transform.forward * vertical + transform.right * horizontal).normalized * force;
+			bool keyCodeA = Input.GetKey(KeyCode.A);
+			bool keyCodeD = Input.GetKey(KeyCode.D);
+			bool keyCodeW = Input.GetKey(KeyCode.W);
+			bool keyCodeS = Input.GetKey(KeyCode.S);
+
+			var vertical = 0.0f;
+			var horizontal = 0.0f;
+
+			if (keyCodeA || keyCodeD)
+			{
+				if (keyCodeA)
+					horizontal = -1.0f;
+				if (keyCodeD)
+					horizontal = 1.0f;
+			}
+			else
+			{
+				horizontal = Input.GetAxisRaw(this.horizontal);
+			}
+
+			if (keyCodeW || keyCodeS)
+			{
+				if (keyCodeW)
+					vertical = 1.0f;
+				if (keyCodeS)
+					vertical = -1.0f;
+			}
+			else
+			{
+				vertical = Input.GetAxisRaw(this.vertical);
+			}
+
+			var deltaForce = (transform.forward * vertical + transform.right * horizontal).normalized * force;
             if (rb.velocity.sqrMagnitude<=maxVelocity*maxVelocity)
             {
                 rb.AddForce(deltaForce);
