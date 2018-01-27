@@ -16,6 +16,7 @@ namespace ggj2018
         Rigidbody rb;
         Animator childAnimator;
         int jumpFrequency;
+        int playerNumber;
         /// <summary>
         /// ダメージを受けている間のカウンター
         /// 毎フレーム減り続け、ゼロになると起き上がる
@@ -26,7 +27,7 @@ namespace ggj2018
         string horizontal = "Pad0Horizontal";
         string jump = "Pad0Jump";
 
-        public int _playerNumber;
+        int _playerNumber;
 
         void Start()
         {
@@ -37,6 +38,8 @@ namespace ggj2018
         public void Setup(int playerNumber)
         {
             _playerNumber = playerNumber;
+
+            this.playerNumber = playerNumber;
 
             var camera = GetComponentInChildren<Camera>();
 
@@ -51,8 +54,8 @@ namespace ggj2018
             horizontal = "Pad" + playerNumber + "Horizontal";
             jump = "Pad" + playerNumber + "Jump";
 
-            var materialSwitcher = GetComponent<CharcterMaterialSwitcher>();
-            materialSwitcher.Setup(playerNumber);
+            var _materialSwitcher = GetComponent<CharcterMaterialSwitcher>();
+            _materialSwitcher.Setup(playerNumber);
         }
 
         void Update()
@@ -87,6 +90,7 @@ namespace ggj2018
             {
                 jumpFrequency++;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+				SeManager.Instance.PlayGoat ();
             }
 
             var result = Physics.Raycast(transform.position, -transform.up, groundCheckRayDirection);
@@ -113,11 +117,11 @@ namespace ggj2018
                 }
             }
         }
-        void Damaged(IDamage damage)
+        public void Damaged(int damage)
         {
             rb.velocity = Vector3.zero;
 
-            damage.OnDamaged(this);
+            ScoreManager.Instance.AddBadScore(playerNumber, damage);
         }
 
         void OnCollisionEnter(Collision collision)
@@ -133,7 +137,6 @@ namespace ggj2018
                 goalBehavior.Goal(_playerNumber);
             }
         }
-
 
         const float reboundForce = 1000.0f;
         public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
