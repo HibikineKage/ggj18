@@ -22,6 +22,12 @@ namespace ggj2018
 
         void Start()
         {
+            var dataManager = ScenesDataManager.Instance;
+            if (!dataManager.IsInitPlayers) {
+                // 本体は事前に初期化されるが、シーン直接起動の場合の対応
+                dataManager.InitPlayers();
+            }
+
             _charcters = GetComponentsInChildren<CharcterBehavior>();
             for (var i = 0; i < GameConstants.PlayerNum; i++) 
             {
@@ -34,7 +40,6 @@ namespace ggj2018
             var timeManager = TimeManager.Instance;
             timeManager.OnTimeup += OnTimeup;
             timeManager.StartGame();
-
 
 			SceneBackgroundMusic (SceneManager.GetActiveScene());
 
