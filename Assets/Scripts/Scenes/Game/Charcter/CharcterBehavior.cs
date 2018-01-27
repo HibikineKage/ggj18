@@ -17,6 +17,10 @@ namespace ggj2018
         Animator childAnimator;
         int jumpFrequency;
         int playerNumber;
+        public int PlayerNumber
+        {
+            get { return playerNumber; }
+        }
         /// <summary>
         /// ダメージを受けている間のカウンター
         /// 毎フレーム減り続け、ゼロになると起き上がる
