@@ -16,6 +16,10 @@ namespace ggj2018
         Rigidbody rb;
         Animator childAnimator;
         int jumpFrequency;
+        /// <summary>
+        /// ダメージを受けている間のカウンター
+        /// 毎フレーム減り続け、ゼロになると起き上がる
+        /// </summary>
         float stunTimer;
 
         string vertical = "Pad0Vertical";
@@ -46,8 +50,11 @@ namespace ggj2018
 
         void Update()
         {
+            // デバッグ用
             if (Input.GetKeyDown(KeyCode.T)) { childAnimator.SetTrigger("Collapse"); }
             if (Input.GetKeyDown(KeyCode.Q)) { childAnimator.SetTrigger("Disappear"); }
+
+
             if (stunTimer <= 0)
             {
                 Walk();
@@ -57,10 +64,11 @@ namespace ggj2018
 
         void Walk()
         {
-			bool keyCodeA = Input.GetKey(KeyCode.A) || Input.GetAxis(this.horizontal) < 0;
-			bool keyCodeD = Input.GetKey(KeyCode.D) || Input.GetAxis(this.horizontal) > 0;
-			bool keyCodeW = Input.GetKey(KeyCode.W) || Input.GetAxis(this.vertical) < 0;
-			bool keyCodeS = Input.GetKey(KeyCode.S) || Input.GetAxis(this.vertical) > 0;
+			bool keyCodeA = Input.GetKey(KeyCode.A);
+            bool keyCodeD = Input.GetKey(KeyCode.D);
+            bool keyCodeW = Input.GetKey(KeyCode.W);
+            bool keyCodeS = Input.GetKey(KeyCode.S);
+            print(keyCodeA);
 
 			var vertical = 0.0f;
 			var horizontal = 0.0f;
