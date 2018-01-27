@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114403258316873896}
   - component: {fileID: 114316410166329732}
   m_Layer: 0
-  m_Name: RootScripts
+  m_Name: InputManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
