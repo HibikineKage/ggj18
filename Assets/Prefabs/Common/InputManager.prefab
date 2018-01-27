@@ -20,10 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4817649642775114}
   - component: {fileID: 114603277038904536}
-  - component: {fileID: 114403258316873896}
-  - component: {fileID: 114316410166329732}
   m_Layer: 0
-  m_Name: RootScripts
+  m_Name: InputManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,28 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114316410166329732
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1107279717734556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aff8c9f2c7d054b688d240cb56dfcafd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114403258316873896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1107279717734556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e685ab9331c37457b97626f8f1c2d141, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114603277038904536
 MonoBehaviour:
   m_ObjectHideFlags: 1
