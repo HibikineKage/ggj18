@@ -13,11 +13,15 @@ namespace ggj2018
         float forwardHitCheckDistance;
         [SerializeField]
         float maxVelocity;
+        [SerializeField]
+        int damage;
 
         Rigidbody rb;
         public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
         {
-            //charcterBehavior.Damaged();
+            charcterBehavior.StunTimer = 1;
+            charcterBehavior.SetAnimationTrigger("");
+            charcterBehavior.Damaged(damage);
         }
 
         void Start()
@@ -42,6 +46,18 @@ namespace ggj2018
         void Broken()
         {
             Destroy(gameObject);
+        }
+
+        const float disappearTime = 2.0f;
+        public float Damage()
+        {
+            return 5.0f;
+        }
+        public void OnDamaged(CharcterBehavior charcterBehavior)
+        {
+
+            charcterBehavior.StunTimer = disappearTime;
+            charcterBehavior.SetAnimationTrigger("Disappear");
         }
     }
 }
