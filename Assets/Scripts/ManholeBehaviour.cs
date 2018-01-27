@@ -11,7 +11,6 @@ namespace ggj2018
 
         public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
         {
-            print("hitHole");
             charcterBehavior.StunTimer = 1.0f;
             charcterBehavior.SetAnimationTrigger("Disappear");
             charcterBehavior.Damaged(damage);

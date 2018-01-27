@@ -7,7 +7,7 @@ namespace ggj2018
 
     public class ObstractGenarator : MonoBehaviour
     {
-        public GameObject Obstacle;
+        public GameObject[] Obstacle;
         public float GenerateRate;
         public float RandomRange;
         public bool RealtimeGenerate = true;
@@ -35,7 +35,8 @@ namespace ggj2018
 
         void Generate()
         {
-            var io = Instantiate(Obstacle, this.transform.position + new Vector3(
+            int objNum = Random.Range(0, Obstacle.Length);
+            var io = Instantiate(Obstacle[objNum], this.transform.position + new Vector3(
               Random.Range(-RandomRange, RandomRange),
               0,
               Random.Range(-RandomRange, RandomRange)), this.transform.rotation);
