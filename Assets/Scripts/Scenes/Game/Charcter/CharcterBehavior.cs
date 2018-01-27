@@ -87,30 +87,30 @@ namespace ggj2018
             if (result) jumpFrequency = 0;
         }
 
-        enum DamagePattern
+        public void SetAnimationTrigger(string animationName)
         {
-            collapse,
-            disappear
+            this.childAnimator.SetTrigger(animationName);
         }
 
-        const float collapseTime=5.0f;
-        const float disappearTime=2.0f;
-        void Damaged(DamagePattern damagePattern)
+        public float StunTimer
+        {
+            get
+            {
+                return this.stunTimer;
+            }
+            set
+            {
+                if (this.stunTimer <= 0)
+                {
+                    this.stunTimer = value;
+                }
+            }
+        }
+        void Damaged(IDamage damage)
         {
             rb.velocity = Vector3.zero;
 
-            switch (damagePattern)
-            {
-                case DamagePattern.collapse:
-                    stunTimer = collapseTime;
-                    childAnimator.SetTrigger("Collapse");
-                    break;
-
-                case DamagePattern.disappear:
-                    stunTimer = disappearTime;
-                    childAnimator.SetTrigger("Disappear");
-                    break;
-            }
+            damage.OnDamaged(this);
         }
 
         void OnCollisionEnter(Collision collision)
