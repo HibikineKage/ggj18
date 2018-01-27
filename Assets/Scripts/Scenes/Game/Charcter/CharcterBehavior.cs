@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ggj2018
 {
-    public partial class CharcterBehavior : MonoBehaviour
+    public partial class CharcterBehavior : MonoBehaviour, IObstacle
     {
 
         public float force;
@@ -120,6 +120,11 @@ namespace ggj2018
             {
                 obstacle.OnCollisionCharcter(this);
             }
+        }
+
+        void OnCollisionCharcter(CharcterBehavior charcterBehavior)
+        {
+            
         }
 
 
