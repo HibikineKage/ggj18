@@ -4,14 +4,20 @@ namespace ggj2018
 {
     public class TimeManager : MonoSingleton<TimeManager>
     {
-        event System.Action OnTimeup;
+        public event System.Action OnTimeup;
 
         private bool _isStarted;
         private float _remainSec = GameConstants.GameLimitSec;
 
+        public bool IsStarted {
+            get {
+                return _isStarted;
+            }
+        }
+
         public int RemainSec {
             get {
-                return (int)_remainSec; 
+                return (int)_remainSec;
             }
         }
 
