@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ggj2018
 {
-    public class PoliceCarBehavior : MonoBehaviour, IObstacle
+    public class CarBehavior : MonoBehaviour, IObstacle
     {
         [SerializeField]
         float forwardForce;
@@ -27,6 +27,7 @@ namespace ggj2018
 
         void Update()
         {
+			SeManager.Instance.PlayCar ();
             if (rb.velocity.sqrMagnitude <= maxVelocity * maxVelocity)
             {
                 rb.AddForce(forwardForce * transform.forward * Time.deltaTime);
