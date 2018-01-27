@@ -7,7 +7,7 @@ namespace ggj2018
     public class GameScene : SceneBase<GameScene>
     {
         [SerializeField]
-        private CharcterBehavior[] _charcters;
+        private CharcterBehavior[] _charcters=new CharcterBehavior[GameConstants.PlayerNum];
 
         [SerializeField]
         private Text _remainTime;
@@ -32,7 +32,7 @@ namespace ggj2018
                 var min = remainSec / 60;
                 var sec = remainSec % 60;
                 // TODO: アロケート走るけどGameJamなので・・・
-                _remainTime.text  = min + ":" + sec;
+                if(_remainTime!=null)_remainTime.text  = min + ":" + sec;
             }
         }
 
