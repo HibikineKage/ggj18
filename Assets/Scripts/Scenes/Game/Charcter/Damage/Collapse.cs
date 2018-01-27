@@ -12,9 +12,8 @@ namespace ggj2018
         }
         public void OnDamaged(CharcterBehavior charcterBehavior)
         {
-                charcterBehavior.StunTimer = collapseTime;
-                charcterBehavior.SetAnimationTrigger("Collapse");
-            }
+            charcterBehavior.StunTimer = collapseTime;
+            charcterBehavior.SetAnimationTrigger("Collapse");
         }
     }
 }
