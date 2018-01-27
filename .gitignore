@@ -54,3 +54,7 @@ sysinfo.txt #Unity3D Generated File On Crash Reports
 # Builds
 *.apk
 *.unitypackage
+
+
+/Assets/Models
+!/Assets/Models/Stage
