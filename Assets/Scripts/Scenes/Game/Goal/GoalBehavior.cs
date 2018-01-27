@@ -18,17 +18,18 @@ namespace ggj2018
 
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void Goal(int playerNum)
         {
-            if (other.tag == "Player")
-            {
-                Goal();
+            var dataManager = ScenesDataManager.Instance;
+            dataManager.AddStageResult(playerNum, new ggj2018.ScenesDataManager.PlayerStageResult(){
+                Rank = dataManager.GetCurrentRank(),
+                RemainTime = TimeManager.Instance.RemainSec,
+                BadScore = ScoreManager.Instance.GetBadScore(playerNum),
+            });
+            if (dataManager.IsAllPlayerGoal()) {
+                dataManager.NextStage();
+                LoadNextScene();
             }
-        }
-
-        void Goal()
-        {
-            LoadNextScene();
         }
 
         void LoadNextScene()

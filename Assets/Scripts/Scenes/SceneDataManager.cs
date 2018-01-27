@@ -76,6 +76,34 @@ namespace ggj2018
             _players[playerNum].AddStage(stage);
         }
 
+        public int GetCurrentRank()
+        {
+            int rank = 0;
+            foreach (var player in _players)
+            {
+                if (player.Stages.Count > CurrentStageNum) {
+                    rank++;
+                }
+            }
+            return rank;
+        }
+
+        public bool IsPlayerGoal(int playerNum)
+        {
+            return _players[playerNum].Stages.Count > CurrentStageNum;
+        }
+
+        public bool IsAllPlayerGoal()
+        {
+            for (var i = 0; i < GameConstants.PlayerNum; i++)
+            {
+                if (!IsPlayerGoal(i)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         #endregion
     }
 }

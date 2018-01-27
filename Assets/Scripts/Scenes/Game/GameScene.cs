@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 namespace ggj2018
 {
@@ -37,7 +38,29 @@ namespace ggj2018
         }
 
         void OnTimeup()
-        {
+        {   
+            var dataManager = ScenesDataManager.Instance;
+            int rank = dataManager.GetCurrentRank();
+            for (int i = 0; i < GameConstants.PlayerNum; i++) {
+                if (!dataManager.IsPlayerGoal(i)) {
+                    dataManager.AddStageResult(i, new ggj2018.ScenesDataManager.PlayerStageResult(){
+                        Rank = rank,
+                        RemainTime = 0,
+                        BadScore = ScoreManager.Instance.GetBadScore(i),
+                    });
+                }
+            }
+                
+            if (dataManager.IsAllPlayerGoal()) {
+                dataManager.NextStage();
+                LoadNextScene();
+            }
         }
+
+        void LoadNextScene()
+        {
+            int loadingSceneIndex = SceneUtility.GetBuildIndexByScenePath(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(loadingSceneIndex + 1);
+        } 
     }
 }

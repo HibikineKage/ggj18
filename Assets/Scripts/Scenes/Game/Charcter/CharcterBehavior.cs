@@ -26,6 +26,8 @@ namespace ggj2018
         string horizontal = "Pad0Horizontal";
         string jump = "Pad0Jump";
 
+        public int _playerNumber;
+
         void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -34,6 +36,8 @@ namespace ggj2018
 
         public void Setup(int playerNumber)
         {
+            _playerNumber = playerNumber;
+
             var camera = GetComponentInChildren<Camera>();
 
             float x = playerNumber % 2 == 0 ? 0 : 0.5f;
@@ -47,8 +51,8 @@ namespace ggj2018
             horizontal = "Pad" + playerNumber + "Horizontal";
             jump = "Pad" + playerNumber + "Jump";
 
-            var _materialSwitcher = GetComponent<CharcterMaterialSwitcher>();
-            _materialSwitcher.Setup(playerNumber);
+            var materialSwitcher = GetComponent<CharcterMaterialSwitcher>();
+            materialSwitcher.Setup(playerNumber);
         }
 
         void Update()
@@ -122,6 +126,11 @@ namespace ggj2018
             if (obstacle != null)
             {
                 obstacle.OnCollisionCharcter(this);
+            }
+            var goalBehavior = collision.gameObject.GetComponent<GoalBehavior>();
+            if (goalBehavior != null) 
+            {
+                goalBehavior.Goal(_playerNumber);
             }
         }
 
