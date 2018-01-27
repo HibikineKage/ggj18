@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ggj2018
 {
-    public partial class CharcterBehavior : MonoBehaviour
+    public partial class CharcterBehavior : MonoBehaviour, IObstacle
     {
 
         public float force;
@@ -87,30 +87,30 @@ namespace ggj2018
             if (result) jumpFrequency = 0;
         }
 
-        enum DamagePattern
+        public void SetAnimationTrigger(string animationName)
         {
-            collapse,
-            disappear
+            this.childAnimator.SetTrigger(animationName);
         }
 
-        const float collapseTime=5.0f;
-        const float disappearTime=2.0f;
-        void Damaged(DamagePattern damagePattern)
+        public float StunTimer
+        {
+            get
+            {
+                return this.stunTimer;
+            }
+            set
+            {
+                if (this.stunTimer <= 0)
+                {
+                    this.stunTimer = value;
+                }
+            }
+        }
+        void Damaged(IDamage damage)
         {
             rb.velocity = Vector3.zero;
 
-            switch (damagePattern)
-            {
-                case DamagePattern.collapse:
-                    stunTimer = collapseTime;
-                    childAnimator.SetTrigger("Collapse");
-                    break;
-
-                case DamagePattern.disappear:
-                    stunTimer = disappearTime;
-                    childAnimator.SetTrigger("Disappear");
-                    break;
-            }
+            damage.OnDamaged(this);
         }
 
         void OnCollisionEnter(Collision collision)
@@ -120,6 +120,14 @@ namespace ggj2018
             {
                 obstacle.OnCollisionCharcter(this);
             }
+        }
+
+
+        const float reboundForce = 1000.0f;
+        public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
+        {
+            Vector3 direction = this.transform.position - charcterBehavior.transform.position;
+            this.rb.AddForce(direction.normalized * reboundForce);
         }
 
 
@@ -137,9 +145,9 @@ namespace ggj2018
 
             if (keyCodeW || keyCodeS)
             {
-                if (keyCodeW)
-                    vertical = -1.0f;
                 if (keyCodeS)
+                    vertical = -1.0f;
+                if (keyCodeW)
                     vertical = 1.0f;
             }
             else
