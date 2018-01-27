@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ggj2018
 {
-    public partial class CharcterBehavior : MonoBehaviour
+    public partial class CharcterBehavior : MonoBehaviour, IObstacle
     {
 
         public float force;
@@ -120,6 +120,14 @@ namespace ggj2018
             {
                 obstacle.OnCollisionCharcter(this);
             }
+        }
+
+
+        const float reboundForce = 1000.0f;
+        public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
+        {
+            Vector3 direction = this.transform.position - charcterBehavior.transform.position;
+            this.rb.AddForce(direction.normalized * reboundForce);
         }
 
 
