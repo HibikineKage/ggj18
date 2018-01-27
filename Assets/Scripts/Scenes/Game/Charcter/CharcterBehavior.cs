@@ -28,7 +28,7 @@ namespace ggj2018
             childAnimator = transform.GetComponentInChildren<Animator>();
         }
 
-        void Setup(int playerNumber)
+        public void Setup(int playerNumber)
         {
             var camera = GetComponentInChildren<Camera>();
 
