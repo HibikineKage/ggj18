@@ -28,7 +28,7 @@ namespace ggj2018
             childAnimator = transform.GetComponentInChildren<Animator>();
         }
 
-        void Setup(int playerNumber)
+        public void Setup(int playerNumber)
         {
             var camera = GetComponentInChildren<Camera>();
 
@@ -51,7 +51,7 @@ namespace ggj2018
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.A)) { childAnimator.SetTrigger("Collapse"); }
+            if (Input.GetKeyDown(KeyCode.T)) { childAnimator.SetTrigger("Collapse"); }
             if (Input.GetKeyDown(KeyCode.Q)) { childAnimator.SetTrigger("Disappear"); }
             if (stunTimer <= 0)
             {
@@ -63,7 +63,6 @@ namespace ggj2018
         void Walk()
         {
             var vertical = Input.GetAxisRaw(this.vertical);
-            Debug.Log(vertical);
             var horizontal = Input.GetAxisRaw(this.horizontal);
             
             var deltaForce = (transform.forward * vertical + transform.right * horizontal).normalized * force;
@@ -86,9 +85,13 @@ namespace ggj2018
             if (result) jumpFrequency = 0;
         }
 
-        void Damaged(float stunTime)
+        void Damaged(string animationName)
         {
-            stunTimer = stunTime;
+            //childAnimator.
+            //stunTimer = stunTime;
+            rb.velocity = Vector3.zero;
+            childAnimator.SetTrigger("Collapse");
+            childAnimator.SetTrigger("Disappear");
         }
 
         void OnCollisionEnter(Collision collision)
