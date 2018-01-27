@@ -13,13 +13,13 @@ namespace ggj2018
 		[SerializeField]
 		private AudioSource spigeon2;				//怒っているハタ
 		[SerializeField]
-		private AudioSource ssquirrel;				//りす
+		private AudioSource spenguin;				//ペンギン
 		[SerializeField]
-		private AudioSource ssquirrel2;				//怒っているりす
+		private AudioSource spenguin2;				//怒っているペンギン
 		[SerializeField]
-		private AudioSource salpaca;				//アルパカ
+		private AudioSource scat;					//猫
 		[SerializeField]
-		private AudioSource salpaca2;				//怒っているアルパカ
+		private AudioSource scat2;					//怒っている猫
 		[SerializeField]
 		private AudioSource sstage1Comp;			//ステージ１の完成SE[SerializeField]
 		[SerializeField]
@@ -68,24 +68,24 @@ namespace ggj2018
 			spigeon2.Play ();
 		}
 
-		public void PlaySquirrel()
+		public void PlayPenguin()
 		{
-			ssquirrel.Play ();
+			spenguin.Play ();
 		}
 
-		public void PlayAngrySquirrel()
+		public void PlayAngryPenguin()
 		{
-			ssquirrel2.Play ();
+			spenguin2.Play ();
 		}
 
-		public void PlayAlpaca()
+		public void PlayCat()
 		{
-			salpaca.Play ();
+			scat.Play ();
 		}
 
-		public void PlayAngryAlpaca()
+		public void PlayAngryCat()
 		{
-			salpaca.Play ();
+			scat.Play ();
 		}
 
 		public void PlayStageOneComplete()
