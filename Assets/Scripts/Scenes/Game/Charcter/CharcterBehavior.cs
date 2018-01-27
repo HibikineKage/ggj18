@@ -32,15 +32,10 @@ namespace ggj2018
         {
             var camera = GetComponentInChildren<Camera>();
 
-            int x = Screen.width / 2 * (playerNumber % 2 == 0 ? 0 : 1);
-            int y = Screen.height / 2 * (playerNumber / 2 == 0 ? 0 : 1);
-            int viewportWidth = Screen.width / 2;
-            int viewportHeight = Screen.height / 2;
-
-            Debug.Log(x);
-            Debug.Log(y);
-            Debug.Log(viewportWidth);
-            Debug.Log(viewportHeight);
+            float x = (playerNumber % 2 == 0 ? 0 : 0.5f);
+            float y = Screen.height / 2 * (playerNumber / 2 == 0 ? 0 : 1);
+            float viewportWidth = .5f;
+            float viewportHeight = .5f;
 
             camera.rect = new Rect(x, y, viewportWidth, viewportHeight);
 
