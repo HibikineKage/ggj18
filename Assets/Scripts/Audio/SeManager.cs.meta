@@ -1,11 +1,32 @@
 fileFormatVersion: 2
 guid: aff8c9f2c7d054b688d240cb56dfcafd
-timeCreated: 1516985632
+timeCreated: 1517030157
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - goat: {fileID: 8300000, guid: 0b4a7c92590bf48fc9b5583c220a7634, type: 3}
+  - goat2: {fileID: 8300000, guid: c111b455771a443e0af8937297f882b1, type: 3}
+  - pigeon: {fileID: 8300000, guid: e95656e4a1f354a8f99b49771ba5b64a, type: 3}
+  - pigeon2: {fileID: 8300000, guid: 619d660fda9af48299e848c756e38131, type: 3}
+  - squirrel: {fileID: 8300000, guid: 33af024448afa45be9f42930736270f2, type: 3}
+  - squirrel2: {fileID: 8300000, guid: 0156ff3eb1f914f118904ed774908b3f, type: 3}
+  - alpaca1: {fileID: 8300000, guid: 0ca9aa1f442554045a24624129a64398, type: 3}
+  - alpaca2: {fileID: 8300000, guid: 5a5ce85e9534b4ea5aadfd7ecab4fb3f, type: 3}
+  - stage1Comp: {fileID: 8300000, guid: 0058dabd5734543d8b32b271755007d7, type: 3}
+  - stage2Comp: {fileID: 8300000, guid: 936f31303939e4e3e9ecec683c9e4c01, type: 3}
+  - stage3Comp: {fileID: 8300000, guid: ed3dddf750b3c46afaf5b0cdfa9e60ab, type: 3}
+  - stage4Comp: {fileID: 8300000, guid: 2067babc5fa9b46d5981c4137e4657df, type: 3}
+  - stage3Heli: {fileID: 8300000, guid: 4d95e9be99eda4d16a487dd5b73c1571, type: 3}
+  - stage3Poli: {fileID: 8300000, guid: 9d1ba3e1371684d129dd769f4b411188, type: 3}
+  - truck: {fileID: 8300000, guid: 5f0c77516ce0b4b8b9d0379d250ff132, type: 3}
+  - car: {fileID: 8300000, guid: f0729db6d4c7e41d9a6f7fa1a4af1430, type: 3}
+  - policecar: {fileID: 8300000, guid: 6936083a9696f445084374cb00b14085, type: 3}
+  - crashCar: {fileID: 8300000, guid: 4bbe4690ff96f4f5893df99a2b990129, type: 3}
+  - crashRival: {fileID: 8300000, guid: a3835ecc2480c46baa4f2d4d0e18f416, type: 3}
+  - menuSelect: {fileID: 8300000, guid: 0dd503a1fed8b4b91817e4342e430098, type: 3}
+  - screenChange: {fileID: 8300000, guid: 7d926c281ecb5451ca1c3b56a887e52e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
