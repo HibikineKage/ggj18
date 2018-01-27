@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace ggj2018
 {
@@ -24,15 +25,8 @@ namespace ggj2018
 
         #region PlayerData
 
-        public enum AnimalType
-        {
-            Goat
-        }
-
         public class PlayerData
         {
-            public AnimalType AnimalType;
-
             private List<PlayerStageResult> _stages = new List<PlayerStageResult>(GameConstants.StageNum);
 
             public List<PlayerStageResult> Stages {
@@ -61,19 +55,47 @@ namespace ggj2018
             return _players[playerNum];
         }
 
-        public void InitPlayers(AnimalType[] AnimalTypes)
+        public void InitPlayers()
         {
             _players = new PlayerData[GameConstants.PlayerNum];
-
-            for (var i = 0; i < GameConstants.PlayerNum; i++) 
-            {
-                _players[i].AnimalType = AnimalTypes[i];
+            for (var i = 0; i < GameConstants.PlayerNum; i++) {
+                _players[i] = new PlayerData();
             }
         }
 
         public void AddStageResult(int playerNum, PlayerStageResult stage)
         {
             _players[playerNum].AddStage(stage);
+
+            Debug.LogFormat("Result[{0}] Rank[{1}] RemainTime[{2}] BadScore[{3}]", playerNum, stage.Rank, stage.RemainTime, stage.BadScore);
+        }
+
+        public int GetCurrentRank()
+        {
+            int rank = 0;
+            foreach (var player in _players)
+            {
+                if (player.Stages.Count > CurrentStageNum) {
+                    rank++;
+                }
+            }
+            return rank;
+        }
+
+        public bool IsPlayerGoal(int playerNum)
+        {
+            return _players[playerNum].Stages.Count > CurrentStageNum;
+        }
+
+        public bool IsAllPlayerGoal()
+        {
+            for (var i = 0; i < GameConstants.PlayerNum; i++)
+            {
+                if (!IsPlayerGoal(i)) {
+                    return false;
+                }
+            }
+            return true;
         }
 
         #endregion

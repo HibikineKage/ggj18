@@ -18,23 +18,33 @@ namespace ggj2018
 
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void Goal(int playerNum)
         {
-            if (other.tag == "Player")
-            {
-                Goal();
+            var dataManager = ScenesDataManager.Instance;
+            dataManager.AddStageResult(playerNum, new ggj2018.ScenesDataManager.PlayerStageResult(){
+                Rank = dataManager.GetCurrentRank(),
+                RemainTime = TimeManager.Instance.RemainSec,
+                BadScore = ScoreManager.Instance.GetBadScore(playerNum),
+            });
+            if (dataManager.IsAllPlayerGoal()) {
+                dataManager.NextStage();
+                LoadNextScene();
             }
-        }
-
-        void Goal()
-        {
-            LoadNextScene();
         }
 
         void LoadNextScene()
         {
             int loadingSceneIndex = SceneUtility.GetBuildIndexByScenePath(SceneManager.GetActiveScene().name);
             SceneManager.LoadScene(loadingSceneIndex + 1);
+        }
+
+        void OnTriggerEnter(Collider collider)
+        {
+            var charBehavior = collider.gameObject.GetComponent<CharcterBehavior>();
+            if (charBehavior != null) 
+            {
+                Goal(charBehavior.PlayerNumber);
+            }
         }
     }
 }
