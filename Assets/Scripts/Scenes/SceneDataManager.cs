@@ -45,7 +45,8 @@ namespace ggj2018
         {
             public int Rank;
             public int RemainTime;
-            public int BadScore;
+            public int Damage;
+            public int Level;
         }
             
         private PlayerData[] _players;
@@ -53,6 +54,11 @@ namespace ggj2018
         public PlayerData GetPlayer(int playerNum) 
         {
             return _players[playerNum];
+        }
+
+        public PlayerStageResult GetPlayerStage(int playerNum) 
+        {
+            return _players[playerNum].Stages[CurrentStageNum];
         }
 
         public void InitPlayers()
@@ -67,7 +73,7 @@ namespace ggj2018
         {
             _players[playerNum].AddStage(stage);
 
-            Debug.LogFormat("Result[{0}] Rank[{1}] RemainTime[{2}] BadScore[{3}]", playerNum, stage.Rank, stage.RemainTime, stage.BadScore);
+            Debug.LogFormat("Result[{0}] Level[{1}] Rank[{2}] RemainTime[{3}] Damage[{4}]", playerNum, stage.Level, stage.Rank, stage.RemainTime, stage.Damage);
         }
 
         public int GetCurrentRank()

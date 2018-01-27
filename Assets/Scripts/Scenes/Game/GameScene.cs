@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace ggj2018
 {
@@ -11,14 +12,24 @@ namespace ggj2018
         private CharcterBehavior[] _charcters=new CharcterBehavior[GameConstants.PlayerNum];
 
         [SerializeField]
+        private LetterBehaviour[] _letters=new LetterBehaviour[GameConstants.PlayerNum];
+
+        [SerializeField]
+        private RankBehaviour[] _ranks=new RankBehaviour[GameConstants.PlayerNum];
+
+        [SerializeField]
         private Text _remainTime;
 
         void Start()
         {
+            _charcters = GetComponentsInChildren<CharcterBehavior>();
             for (var i = 0; i < GameConstants.PlayerNum; i++) 
             {
                 _charcters[i].Setup(i);
             }
+
+            _letters = GetComponentsInChildren<LetterBehaviour>(includeInactive:true);
+            _ranks = GetComponentsInChildren<RankBehaviour>(includeInactive:true);
 
             var timeManager = TimeManager.Instance;
             timeManager.OnTimeup += OnTimeup;
@@ -41,6 +52,14 @@ namespace ggj2018
             }
         }
 
+        public void OnGoal(int playerNum)
+        {  
+            var dataManager = ScenesDataManager.Instance;
+            var stage = dataManager.GetPlayerStage(playerNum);
+            _letters[playerNum].Show(dataManager.CurrentStageNum, stage.Level);
+            _ranks[playerNum].Show(stage.Rank);
+        }
+
         void OnTimeup()
         {   
             var dataManager = ScenesDataManager.Instance;
@@ -50,15 +69,31 @@ namespace ggj2018
                     dataManager.AddStageResult(i, new ggj2018.ScenesDataManager.PlayerStageResult(){
                         Rank = rank,
                         RemainTime = 0,
-                        BadScore = ScoreManager.Instance.GetBadScore(i),
+                        Damage = ScoreManager.Instance.GetBadScore(i),
                     });
                 }
             }
                 
             if (dataManager.IsAllPlayerGoal()) {
-                dataManager.NextStage();
-                LoadNextScene();
+                TimeManager.Instance.StopGame();
+
+                StartCoroutine(NextWaitCoroutine());
+
+                for (int i = 0; i < GameConstants.PlayerNum; i++) {
+                    var stage = dataManager.GetPlayerStage(i);
+                    _letters[i].Show(dataManager.CurrentStageNum, stage.Level);
+                    _ranks[i].Show(stage.Rank);
+                }
             }
+        }
+
+        private IEnumerator NextWaitCoroutine() 
+        {  
+            yield return new WaitForSeconds (5f);  
+
+            var dataManager = ScenesDataManager.Instance;
+            dataManager.NextStage();
+            LoadNextScene();
         }
             
         void LoadNextScene()
