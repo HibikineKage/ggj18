@@ -110,10 +110,13 @@ namespace ggj2018
 				Debug.Log ("hello");
 			} else if (scene.name == "Stage2") {
 				BgmManager.Instance.PlayStage2Background ();
+				BgmManager.Instance.PlayMainBGM ();
 			} else if (scene.name == "Stage3") {
 				BgmManager.Instance.PlayStage3Background ();
+				BgmManager.Instance.PlayMainBGM ();
 			} else if (scene.name == "Stage4") {
 				BgmManager.Instance.PlayStage4Background ();
+				BgmManager.Instance.PlayMainBGM ();
 			} else if (scene.name == "Result") {
 				BgmManager.Instance.PlayResultBGM ();
 			} else if (scene.name == "Title") {
