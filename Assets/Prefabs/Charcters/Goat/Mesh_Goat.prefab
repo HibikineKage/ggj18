@@ -238,6 +238,7 @@ MonoBehaviour:
   jumpForce: 8
   maxJumpFrequency: 3
   groundCheckRayDirection: 3.31
+  name: Goat
 --- !u!124 &124306582870826238
 Behaviour:
   m_ObjectHideFlags: 1

@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 namespace ggj2018
 {
-    public partial class CharcterBehavior : MonoBehaviour, IObstacle
+	public partial class CharcterBehavior : MonoBehaviour, IObstacle
     {
 
         public float force;
@@ -12,6 +13,8 @@ namespace ggj2018
         public float jumpForce;
         public int maxJumpFrequency;
         public float groundCheckRayDirection;
+		public string name;
+
 
         Rigidbody rb;
         Animator childAnimator;
@@ -95,6 +98,7 @@ namespace ggj2018
             {
                 jumpFrequency++;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+				Sound ();
             }
 
             var result = Physics.Raycast(transform.position, -transform.up, groundCheckRayDirection);
@@ -143,6 +147,7 @@ namespace ggj2018
         {
             Vector3 direction = this.transform.position - charcterBehavior.transform.position;
             this.rb.AddForce(direction.normalized * reboundForce);
+			AngrySound ();
         }
 
 
@@ -194,5 +199,40 @@ namespace ggj2018
 
             return horizontal;
         }
+
+
+		void Sound ()
+		{
+			if (this.name == "Goat") 
+			{
+				SeManager.Instance.PlayGoat ();
+			} else if (this.name == "Penguin") 
+			{
+				SeManager.Instance.PlayPenguin ();
+			} else if (this.name == "Dove") 
+			{
+				SeManager.Instance.PlayPigeon ();
+			} else 
+			{
+				SeManager.Instance.PlayCat ();
+			}
+		}
+
+		void AngrySound()
+		{
+			if (this.name == "Goat") 
+			{
+				SeManager.Instance.PlayAngryGoat ();
+			} else if (this.name == "Penguin") 
+			{
+				SeManager.Instance.PlayAngryPenguin ();
+			} else if (this.name == "Dove") 
+			{
+				SeManager.Instance.PlayAngryPigeon ();
+			} else 
+			{
+				SeManager.Instance.PlayAngryCat ();
+			}
+		}
     }
 }
