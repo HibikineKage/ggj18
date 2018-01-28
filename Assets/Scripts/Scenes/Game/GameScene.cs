@@ -26,13 +26,13 @@ namespace ggj2018
             }
 
             _charcters = GetComponentsInChildren<CharcterBehavior>();
+            _playerHUD = GetComponentsInChildren<PlayerHUD>();
             for (var i = 0; i < GameConstants.PlayerNum; i++) 
             {
                 _charcters[i].Setup(i);
                 _charcters[i].SetHitParticle(_hitParticle);
+                _playerHUD[i].Setup(i);
             }
-
-            _playerHUD = GetComponentsInChildren<PlayerHUD>();
 
             var timeManager = TimeManager.Instance;
             timeManager.OnTimeup += OnTimeup;
