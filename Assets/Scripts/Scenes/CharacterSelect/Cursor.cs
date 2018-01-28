@@ -1,47 +1,61 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cursor : MonoBehaviour {
 
-    SpriteRenderer sprRen;
-    string vertical;
-    string horizontal;
+    [SerializeField]
+    float velocity;
+
+    SpriteRenderer _sprRen;
+    string _vertical;
+    string _horizontal;
+    string _jump;
+    int _playerNumber;
     void Start () {
 
     }
 	
 	void Update () {
-        if (Input.GetButtonDown("vertical"))
+        if (Input.GetButtonDown(_jump))
         {
-
+            RaycastHit2D hit;
+            hit=Physics2D.Raycast(transform.position, Vector3.forward, 100);
         }
+
+        float ver = Input.GetAxisRaw(_vertical);
+        float hor = Input.GetAxisRaw(_horizontal);
+        Vector3 deltaV = new Vector3(ver, hor, 0)*velocity*Time.deltaTime;
+        transform.Translate(deltaV);
 
     }
 
     public void SetData(int playerNumber)
     {
-        vertical = "Pad" + playerNumber + "Vertical";
-        horizontal = "Pad" + playerNumber + "Horizontal";
-        sprRen = GetComponent<SpriteRenderer>();
+        _playerNumber = playerNumber;
+        _vertical = "Pad" + playerNumber + "Vertical";
+        _horizontal = "Pad" + playerNumber + "Horizontal";
+        _jump = "Pad" + playerNumber + "Jump";
+        _sprRen = GetComponent<SpriteRenderer>();
 
         switch (playerNumber)
         {
             case 0:
-                sprRen.color = Color.red;
-                sprRen.color = new Color(sprRen.color.r, sprRen.color.g, sprRen.color.b, 0.75f);
+                _sprRen.color = Color.red;
+                _sprRen.color = new Color(_sprRen.color.r, _sprRen.color.g, _sprRen.color.b, 0.3f);
                 break;
             case 1:
-                sprRen.color = Color.blue;
-                sprRen.color = new Color(sprRen.color.r, sprRen.color.g, sprRen.color.b, 0.75f);
+                _sprRen.color = Color.blue;
+                _sprRen.color = new Color(_sprRen.color.r, _sprRen.color.g, _sprRen.color.b, 0.3f);
                 break;
             case 2:
-                sprRen.color = Color.yellow;
-                sprRen.color = new Color(sprRen.color.r, sprRen.color.g, sprRen.color.b, 0.75f);
+                _sprRen.color = Color.yellow;
+                _sprRen.color = new Color(_sprRen.color.r, _sprRen.color.g, _sprRen.color.b, 0.3f);
                 break;
             case 3:
-                sprRen.color = Color.green;
-                sprRen.color = new Color(sprRen.color.r, sprRen.color.g, sprRen.color.b, 0.75f);
+                _sprRen.color = Color.green;
+                _sprRen.color = new Color(_sprRen.color.r, _sprRen.color.g, _sprRen.color.b, 0.3f);
                 break;
         }
     }
