@@ -6979,11 +6979,6 @@ Prefab:
       propertyPath: _remainTime
       value: 
       objectReference: {fileID: 253650086}
-    - target: {fileID: 114552003081200060, guid: 60972104491d98c42824e23dc01ac418,
-        type: 2}
-      propertyPath: _hitParticle
-      value: 
-      objectReference: {fileID: 100000, guid: 0d142f301e46cb44f8b703d429f489db, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60972104491d98c42824e23dc01ac418, type: 2}
   m_IsPrefabParent: 0
