@@ -8,14 +8,9 @@ namespace ggj2018
 {
     public class GameScene : SceneBase<GameScene>
     {
-        [SerializeField]
-        private CharcterBehavior[] _charcters=new CharcterBehavior[GameConstants.PlayerNum];
+        private CharcterBehavior[] _charcters;
 
-        [SerializeField]
-        private LetterBehaviour[] _letters=new LetterBehaviour[GameConstants.PlayerNum];
-
-        [SerializeField]
-        private RankBehaviour[] _ranks=new RankBehaviour[GameConstants.PlayerNum];
+        private PlayerHUD[] _playerHUD;
 
         [SerializeField]
         private Text _remainTime;
@@ -34,8 +29,7 @@ namespace ggj2018
                 _charcters[i].Setup(i);
             }
 
-            _letters = GetComponentsInChildren<LetterBehaviour>(includeInactive:true);
-            _ranks = GetComponentsInChildren<RankBehaviour>(includeInactive:true);
+            _playerHUD = GetComponentsInChildren<PlayerHUD>();
 
             var timeManager = TimeManager.Instance;
             timeManager.OnTimeup += OnTimeup;
@@ -61,8 +55,7 @@ namespace ggj2018
         {  
             var dataManager = ScenesDataManager.Instance;
             var stage = dataManager.GetPlayerStage(playerNum);
-            _letters[playerNum].Show(dataManager.CurrentStageNum, stage.Level);
-            _ranks[playerNum].Show(stage.Rank);
+            _playerHUD[playerNum].ShowResult(stage.Rank, dataManager.CurrentStageNum, stage.Level);
         }
 
         void OnTimeup()
@@ -85,9 +78,7 @@ namespace ggj2018
                 StartCoroutine(NextWaitCoroutine());
 
                 for (int i = 0; i < GameConstants.PlayerNum; i++) {
-                    var stage = dataManager.GetPlayerStage(i);
-                    _letters[i].Show(dataManager.CurrentStageNum, stage.Level);
-                    _ranks[i].Show(stage.Rank);
+                    OnGoal(i);
                 }
             }
         }
