@@ -73,7 +73,7 @@ public class HomingShika : MonoBehaviour
 	{
 		if (m_Closer != null && m_Time > 0.0f)
 		{
-			m_Transform.LookAt(m_CloserTransform.localPosition, new Vector3(0.0f, 1.0f, 0.0f));
+			m_Transform.LookAt(m_CloserTransform, new Vector3(0.0f, 1.0f, 0.0f));
 
 			m_Ridid.AddRelativeForce(0.0f, 0.0f, 40.0f);
 			m_Time -= Time.deltaTime;
