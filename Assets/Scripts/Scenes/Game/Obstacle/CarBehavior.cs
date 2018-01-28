@@ -17,7 +17,6 @@ namespace ggj2018
         Collider col;
         public void OnCollisionCharcter(CharcterBehavior charcterBehavior)
         {
-            print("HitCar");
             charcterBehavior.StunTimer = 4;
             charcterBehavior.SetAnimationTrigger("Collapse");
             charcterBehavior.Damaged(damage);
