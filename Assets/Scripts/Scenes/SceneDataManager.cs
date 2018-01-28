@@ -27,6 +27,20 @@ namespace ggj2018
 
         public class PlayerData
         {
+            public enum AnimalType
+            {
+                goat,
+                dobe,
+                cat,
+                penguin
+            }
+            AnimalType _animalType;
+
+            public void SetAnimalType(AnimalType type)
+            {
+                _animalType = type;
+            }
+
             private List<PlayerStageResult> _stages = new List<PlayerStageResult>(GameConstants.StageNum);
 
             public List<PlayerStageResult> Stages {

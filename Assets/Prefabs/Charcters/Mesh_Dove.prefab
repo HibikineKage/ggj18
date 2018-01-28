@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 114366259763571970}
   - component: {fileID: 114060078256345232}
   - component: {fileID: 114193795151232278}
+  - component: {fileID: 95253069531577258}
   m_Layer: 0
   m_Name: PlayerHUD
   m_TagString: Untagged
@@ -293,6 +294,23 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1395869739890570}
   m_Enabled: 1
+--- !u!95 &95253069531577258
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1924803952353834}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efb1dd4f3173d43f7b8d81a429b88f34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95587609229405180
 Animator:
   serializedVersion: 3
