@@ -12,6 +12,7 @@ namespace ggj2018
         public GameObject _hitParticle;
         private CharcterBehavior[] _charcters;
 
+        private GameHUD _gameHUD;
         private PlayerHUD[] _playerHUD;
 
         [SerializeField]
@@ -33,6 +34,8 @@ namespace ggj2018
                 _charcters[i].SetHitParticle(_hitParticle);
                 _playerHUD[i].Setup(i);
             }
+            _gameHUD = GetComponentInChildren<GameHUD>();
+            _gameHUD.PlayStart();
 
             var timeManager = TimeManager.Instance;
             timeManager.OnTimeup += OnTimeup;
