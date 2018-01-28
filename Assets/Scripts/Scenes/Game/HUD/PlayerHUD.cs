@@ -29,22 +29,22 @@ namespace ggj2018
             _commentText.gameObject.SetActive(true);
             switch (level)
             {
-                case 0:
+                case 5:
                     _commentText.text = "大変良くできました";
                     break;
-                case 1:
+                case 4:
                     _commentText.text = "良くできました";
                     break;
-                case 2:
+                case 3:
                     _commentText.text = "普通です";
                     break;
-                case 3:
+                case 2:
                     _commentText.text = "駄目です";
                     break;
-                case 4:
+                case 1:
                     _commentText.text = "ちょっと駄目です";
                     break;
-                case 5:
+                case 0:
                     _commentText.text = "すごく駄目です";
                     break;
             }
