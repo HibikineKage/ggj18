@@ -10,6 +10,7 @@ public class HomingShika : MonoBehaviour
 	Transform m_CloserTransform;
 	float m_Time = 10.0f;
 
+
 	float m_CollideCheckSpan = 0.3f;
 	float m_CollideCheckSpanNow = 0.0f;
 
