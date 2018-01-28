@@ -13,10 +13,12 @@ namespace ggj2018
         void Start()
         {
             _cursors = new Cursor[GameConstants.PlayerNum];
+            ScenesDataManager.Instance.InitPlayers();
 
             for (int i=0;i < GameConstants.PlayerNum; i++)
             {
                 GameObject obj=Instantiate(carsole, transform.position, Quaternion.identity);
+                _cursors[i] = obj.GetComponent<Cursor>();
                 obj.GetComponent<Cursor>().SetData(i);
             }
         }
