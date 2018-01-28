@@ -41,7 +41,7 @@ namespace ggj2018
 		[SerializeField]
 		private AudioSource scrashCar;				//車と衝突すると
 		[SerializeField]
-		private AudioSource scrashRival;			//ライバルと衝突すると
+		private AudioSource smanhole;			//ライバルと衝突すると
 		[SerializeField]
 		private AudioSource smenuSelect;			//何かを洗濯してボタンを押す音
 		[SerializeField]
@@ -138,9 +138,9 @@ namespace ggj2018
 			scrashCar.Play ();
 		}
 
-		public void PlayCrashRival()
+		public void PlayManhole()
 		{
-			scrashRival.Play ();
+			smanhole.Play ();
 		}
 
 		public void PlayMenuSelect()

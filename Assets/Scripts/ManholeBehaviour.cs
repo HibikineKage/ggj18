@@ -15,6 +15,7 @@ namespace ggj2018
             charcterBehavior.SetAnimationTrigger("Disappear");
             charcterBehavior.Damaged(damage);
             StartCoroutine(MoveFront(charcterBehavior));
+			SeManager.Instance.PlayManhole ();
         }
 
         const float MoveDistance = 20.0f;
