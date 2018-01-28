@@ -50,45 +50,49 @@ namespace ggj2018
                 var min = remainSec / 60;
                 var sec = remainSec % 60;
                 // TODO: アロケート走るけどGameJamなので・・・
-                if(_remainTime!=null)_remainTime.text  = min + ":" + sec;
+                if(_remainTime!=null)_remainTime.text  = min + ":" + string.Format("{0:00}", sec);
             }
         }
 
         public void OnGoal(int playerNum)
         {  
             var dataManager = ScenesDataManager.Instance;
-            var stage = dataManager.GetPlayerStage(playerNum);
+            var stage = new ScenesDataManager.PlayerStageResult(){
+                Rank = dataManager.GetCurrentRank(),
+                RemainTime = TimeManager.Instance.RemainSec,
+                Damage = ScoreManager.Instance.GetBadScore(playerNum),
+            };
+            dataManager.AddStageResult(playerNum, stage);
             _playerHUD[playerNum].ShowResult(stage.Rank, dataManager.CurrentStageNum, stage.Level);
+
+            if (dataManager.IsAllPlayerGoal()) {
+                TimeManager.Instance.StopGame();
+                StartCoroutine(NextWaitCoroutine());
+            }
         }
 
         void OnTimeup()
         {   
             var dataManager = ScenesDataManager.Instance;
-            int rank = dataManager.GetCurrentRank();
             for (int i = 0; i < GameConstants.PlayerNum; i++) {
                 if (!dataManager.IsPlayerGoal(i)) {
-                    dataManager.AddStageResult(i, new ggj2018.ScenesDataManager.PlayerStageResult(){
-                        Rank = rank,
+                    var stage = new ScenesDataManager.PlayerStageResult(){
+                        Rank = 4,
                         RemainTime = 0,
                         Damage = ScoreManager.Instance.GetBadScore(i),
-                    });
+                    };
+                    dataManager.AddStageResult(i, stage);
+                    _playerHUD[i].ShowResult(stage.Rank, dataManager.CurrentStageNum, stage.Level);
                 }
             }
                 
-            if (dataManager.IsAllPlayerGoal()) {
-                TimeManager.Instance.StopGame();
-
-                StartCoroutine(NextWaitCoroutine());
-
-                for (int i = 0; i < GameConstants.PlayerNum; i++) {
-                    OnGoal(i);
-                }
-            }
+            TimeManager.Instance.StopGame();
+            StartCoroutine(NextWaitCoroutine());
         }
 
         private IEnumerator NextWaitCoroutine() 
         {  
-            yield return new WaitForSeconds (5f);  
+            yield return new WaitForSeconds (10f);  
 
             var dataManager = ScenesDataManager.Instance;
             dataManager.NextStage();
