@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 60126439}
   - component: {fileID: 60126438}
-  - component: {fileID: 60126441}
   - component: {fileID: 60126440}
   m_Layer: 0
   m_Name: Extra Button
@@ -130,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &60126438
 Canvas:
   m_ObjectHideFlags: 0
@@ -181,31 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e01c8fd49ad0044baf9ff1100afc4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &60126441
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 60126437}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.29743195, y: 0.00032043457}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 196.65681, y: 75.64853}
-  m_EdgeRadius: 0
+  animalType: 0
 --- !u!1 &156214169
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +436,6 @@ GameObject:
   m_Component:
   - component: {fileID: 945511057}
   - component: {fileID: 473032244}
-  - component: {fileID: 473032243}
   m_Layer: 0
   m_Name: Mesh_Cat
   m_TagString: Untagged
@@ -469,24 +443,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &473032243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114418782503051598, guid: 0eb4f3f42b0c98344800358bdb69333a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 473032241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b1387e8f284e84f929aec81c0fca27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 91.85
-  maxVelocity: 208.6
-  jumpForce: 8
-  maxJumpFrequency: 3
-  groundCheckRayDirection: 3.31
-  name: Cat
 --- !u!54 &473032244
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -513,7 +469,6 @@ GameObject:
   m_Component:
   - component: {fileID: 343821912}
   - component: {fileID: 505908669}
-  - component: {fileID: 505908668}
   m_Layer: 0
   m_Name: Mesh_Dove
   m_TagString: Untagged
@@ -521,24 +476,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &505908668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114804483006300160, guid: 175aba1d611c0c748bad7f9b0fc5bf0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 505908666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b1387e8f284e84f929aec81c0fca27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 91.85
-  maxVelocity: 208.6
-  jumpForce: 8
-  maxJumpFrequency: 3
-  groundCheckRayDirection: 3.31
-  name: Dove
 --- !u!54 &505908669
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -869,6 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e01c8fd49ad0044baf9ff1100afc4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animalType: 3
 --- !u!61 &732678062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1300,6 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e01c8fd49ad0044baf9ff1100afc4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animalType: 3
 --- !u!61 &1080974518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1489,7 +1428,6 @@ GameObject:
   m_Component:
   - component: {fileID: 769468040}
   - component: {fileID: 1174799133}
-  - component: {fileID: 1174799132}
   m_Layer: 0
   m_Name: Mesh_Penguin
   m_TagString: Untagged
@@ -1497,24 +1435,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1174799132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114841672584121918, guid: df0e83a6e65c91744ab949f3982c88fe,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1174799131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b1387e8f284e84f929aec81c0fca27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 91.85
-  maxVelocity: 208.6
-  jumpForce: 8
-  maxJumpFrequency: 3
-  groundCheckRayDirection: 3.31
-  name: Penguin
 --- !u!54 &1174799133
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1745,7 +1665,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1270586093}
   - component: {fileID: 1343126205}
-  - component: {fileID: 1343126204}
   m_Layer: 0
   m_Name: Mesh_Goat
   m_TagString: Player
@@ -1753,24 +1672,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1343126204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114339846104659976, guid: 3156e68a20b3f3e41878c2666e521bbe,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1343126202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b1387e8f284e84f929aec81c0fca27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 91.85
-  maxVelocity: 208.6
-  jumpForce: 8
-  maxJumpFrequency: 3
-  groundCheckRayDirection: 3.31
-  name: Goat
 --- !u!54 &1343126205
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1933,6 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e01c8fd49ad0044baf9ff1100afc4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animalType: 2
 --- !u!61 &1436104859
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2289,6 +2191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e01c8fd49ad0044baf9ff1100afc4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animalType: 0
 --- !u!61 &1689580974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2571,68 +2474,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981006379}
---- !u!1001 &2044856089
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1080974512}
-    m_Modifications:
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.06645227
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.90984374
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.16042998
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.3768696
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 135
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603414405331668, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 15
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
-  m_IsPrefabParent: 0
 --- !u!82 &2130903420 stripped
 AudioSource:
   m_PrefabParentObject: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,

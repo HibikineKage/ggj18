@@ -15,7 +15,7 @@ namespace ggj2018
             {
                 var dataManager = ScenesDataManager.Instance;
                 dataManager.InitStage();
-                dataManager.InitPlayers();
+                //dataManager.InitPlayers();
                 LoadNextScene();
             }
         }

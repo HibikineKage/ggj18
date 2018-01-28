@@ -7,14 +7,7 @@ namespace ggj2018
     public class CharacterSelectButtons : MonoBehaviour
     {
 
-        void Start()
-        {
-
-        }
-
-        void Update()
-        {
-
-        }
+        [SerializeField]
+        public ScenesDataManager.PlayerData.AnimalType animalType;
     }
 }
