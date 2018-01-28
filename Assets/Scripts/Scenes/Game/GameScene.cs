@@ -61,6 +61,10 @@ namespace ggj2018
         public void OnGoal(int playerNum)
         {  
             var dataManager = ScenesDataManager.Instance;
+            if (dataManager.IsPlayerGoal(playerNum)) {
+                return;
+            }
+
             var stage = new ScenesDataManager.PlayerStageResult(){
                 Rank = dataManager.GetCurrentRank(),
                 RemainTime = TimeManager.Instance.RemainSec,
