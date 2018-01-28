@@ -157,7 +157,8 @@ namespace ggj2018
         {
             if (hitParticle != null)
             {
-                Instantiate(hitParticle, this.transform.position, this.transform.rotation);
+                var p = Instantiate(hitParticle, this.transform.position, this.transform.rotation);
+                p.transform.localScale = new Vector3(6, 6, 6);
             }
         }
 

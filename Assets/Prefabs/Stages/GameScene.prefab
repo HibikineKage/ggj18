@@ -75,9 +75,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8828677647e4f93a47fcd5486a5c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _charcters:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _hitParticle: {fileID: 100004, guid: 52166613422214f41aabe85899bbd712, type: 2}
   _remainTime: {fileID: 0}
