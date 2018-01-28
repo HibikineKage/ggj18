@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1680,7 +1680,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1026638288
 Prefab:
@@ -1779,9 +1779,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1930835708155716, guid: c3f9a28658cd141a39e7afdffe5d8595, type: 2}
+      propertyPath: m_Name
+      value: smanhole
+      objectReference: {fileID: 0}
+    - target: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3835ecc2480c46baa4f2d4d0e18f416, type: 3}
+    - target: {fileID: 114671840375919250, guid: c3f9a28658cd141a39e7afdffe5d8595,
+        type: 2}
+      propertyPath: smanhole
+      value: 
+      objectReference: {fileID: 1098900394}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3f9a28658cd141a39e7afdffe5d8595, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &1098900394 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
+    type: 2}
+  m_PrefabInternal: {fileID: 1098900393}
 --- !u!1001 &1130177647
 Prefab:
   m_ObjectHideFlags: 0
