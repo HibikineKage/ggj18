@@ -8,7 +8,7 @@ namespace ggj2018
 
         private readonly int _startAnimeHash = Animator.StringToHash("Start");
 
-        void Start()
+        public void Setup()
         {
             _animator = GetComponent<Animator>();
         }

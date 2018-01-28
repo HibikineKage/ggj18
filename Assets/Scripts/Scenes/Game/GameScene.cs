@@ -35,6 +35,7 @@ namespace ggj2018
                 _playerHUD[i].Setup(i);
             }
             _gameHUD = GetComponentInChildren<GameHUD>();
+            _gameHUD.Setup();
             _gameHUD.PlayStart();
 
             var timeManager = TimeManager.Instance;
