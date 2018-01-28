@@ -55,6 +55,21 @@ namespace ggj2018
                     _commentText.text = "すごく駄目です";
                     break;
             }
+			switch (stage) 
+			{
+				case 0:
+					SeManager.Instance.PlayStageOneComplete ();
+					break;
+				case 1: 
+					SeManager.Instance.PlayStageFourComplete ();
+					break;
+				case 2:
+					SeManager.Instance.PlayStageThreeComplete ();
+					break;
+				case 3:
+					SeManager.Instance.PlayStageTwoComplete ();
+					break;
+			}
         }
     }
 }
