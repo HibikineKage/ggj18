@@ -46,10 +46,10 @@ namespace ggj2018
                     _commentText.text = "普通です";
                     break;
                 case 2:
-                    _commentText.text = "駄目です";
+                    _commentText.text = "ちょっと駄目です";
                     break;
                 case 1:
-                    _commentText.text = "ちょっと駄目です";
+                    _commentText.text = "駄目です";
                     break;
                 case 0:
                     _commentText.text = "すごく駄目です";

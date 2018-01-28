@@ -1,0 +1,9 @@
+diff a/Assets/Prefabs/Charcters/Goat/Mesh_Goat.prefab b/Assets/Prefabs/Charcters/Goat/Mesh_Goat.prefab	(rejected hunks)
+@@ -170,6 +170,7 @@
+    m_PrefabParentObject: {fileID: 0}
+    m_PrefabInternal: {fileID: 100100000}
+    m_GameObject: {fileID: 1931887931945822}
+++<<<<<<< HEAD
+ +  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+ +  m_LocalPosition: {x: -40, y: 4, z: -40}
+ +=======
