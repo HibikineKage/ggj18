@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8828677647e4f93a47fcd5486a5c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitParticle: {fileID: 100000, guid: 0d142f301e46cb44f8b703d429f489db, type: 2}
   _remainTime: {fileID: 445512670}
 --- !u!4 &718447908
 Transform:
@@ -538,9 +539,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1930835708155716, guid: c3f9a28658cd141a39e7afdffe5d8595, type: 2}
+      propertyPath: m_Name
+      value: smanhole
+      objectReference: {fileID: 0}
+    - target: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3835ecc2480c46baa4f2d4d0e18f416, type: 3}
+    - target: {fileID: 114671840375919250, guid: c3f9a28658cd141a39e7afdffe5d8595,
+        type: 2}
+      propertyPath: smanhole
+      value: 
+      objectReference: {fileID: 802825501}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3f9a28658cd141a39e7afdffe5d8595, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &802825501 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
+    type: 2}
+  m_PrefabInternal: {fileID: 802825500}
 --- !u!1 &813437661
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +752,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82984521242284614, guid: f2aa6c818b35c465ebc34818c1c7d4e5,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bd89dc411cc9bce43a0303635f746491, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2aa6c818b35c465ebc34818c1c7d4e5, type: 2}
   m_IsPrefabParent: 0
