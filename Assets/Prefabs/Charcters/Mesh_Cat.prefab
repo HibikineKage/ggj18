@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 114221043337544570}
   - component: {fileID: 114144845419372144}
   - component: {fileID: 114046681252542486}
+  - component: {fileID: 95130889175699880}
   m_Layer: 0
   m_Name: PlayerHUD
   m_TagString: Untagged
@@ -315,6 +316,23 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5a0655303982fd842b0d056b727b24a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95130889175699880
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1501895144739562}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efb1dd4f3173d43f7b8d81a429b88f34, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

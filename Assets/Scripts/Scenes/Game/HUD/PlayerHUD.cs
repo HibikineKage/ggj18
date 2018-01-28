@@ -20,20 +20,23 @@ namespace ggj2018
         [SerializeField]
         private LetterSettings _letterSettings;
 
+        private Animator _animator;
+
+        private readonly int _goalAnimeHash = Animator.StringToHash("Goal");
+
         public void Setup(int playerNum)
         {
+            _animator = GetComponent<Animator>();
+
             _numText.text = (playerNum + 1) + "P";
         }
 
         public void ShowResult(int rank, int stage,  int level)
         {
-            _letterImage.gameObject.SetActive(true);
             _letterImage.sprite = _letterSettings.GetSprite(stage, level);
 
-            _rankText.gameObject.SetActive(true);
             _rankText.text = rank + "位";
 
-            _commentText.gameObject.SetActive(true);
             switch (level)
             {
                 case 5:
@@ -55,6 +58,8 @@ namespace ggj2018
                     _commentText.text = "すごく駄目です";
                     break;
             }
+
+            _animator.Play(_goalAnimeHash);
         }
     }
 }
