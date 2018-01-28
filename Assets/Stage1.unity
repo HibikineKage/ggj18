@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8828677647e4f93a47fcd5486a5c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitParticle: {fileID: 100000, guid: 0d142f301e46cb44f8b703d429f489db, type: 2}
   _remainTime: {fileID: 445512670}
 --- !u!4 &718447908
 Transform:

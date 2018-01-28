@@ -6,6 +6,9 @@ namespace ggj2018
     public class PlayerHUD : MonoBehaviour
     {
         [SerializeField]
+        private Text _numText;
+
+        [SerializeField]
         private Image _letterImage;
 
         [SerializeField]
@@ -17,15 +20,19 @@ namespace ggj2018
         [SerializeField]
         private LetterSettings _letterSettings;
 
+        public void Setup(int playerNum)
+        {
+            _numText.text = (playerNum + 1) + "P";
+        }
+
         public void ShowResult(int rank, int stage,  int level)
         {
-            _letterImage.gameObject.transform.localScale = Vector3.one;
+            _letterImage.gameObject.SetActive(true);
             _letterImage.sprite = _letterSettings.GetSprite(stage, level);
 
-            _rankText.gameObject.transform.localScale = Vector3.one;
+            _rankText.gameObject.SetActive(true);
             _rankText.text = rank + "位";
 
-            _commentText.gameObject.transform.localScale = Vector3.one;
             _commentText.gameObject.SetActive(true);
             switch (level)
             {

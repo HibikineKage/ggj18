@@ -8,6 +8,8 @@ namespace ggj2018
 {
     public class GameScene : SceneBase<GameScene>
     {
+
+        public GameObject _hitParticle;
         private CharcterBehavior[] _charcters;
 
         private PlayerHUD[] _playerHUD;
@@ -24,12 +26,13 @@ namespace ggj2018
             }
 
             _charcters = GetComponentsInChildren<CharcterBehavior>();
+            _playerHUD = GetComponentsInChildren<PlayerHUD>();
             for (var i = 0; i < GameConstants.PlayerNum; i++) 
             {
                 _charcters[i].Setup(i);
+                _charcters[i].SetHitParticle(_hitParticle);
+                _playerHUD[i].Setup(i);
             }
-
-            _playerHUD = GetComponentsInChildren<PlayerHUD>();
 
             var timeManager = TimeManager.Instance;
             timeManager.OnTimeup += OnTimeup;
@@ -107,10 +110,13 @@ namespace ggj2018
 				Debug.Log ("hello");
 			} else if (scene.name == "Stage2") {
 				BgmManager.Instance.PlayStage2Background ();
+				BgmManager.Instance.PlayMainBGM ();
 			} else if (scene.name == "Stage3") {
 				BgmManager.Instance.PlayStage3Background ();
+				BgmManager.Instance.PlayMainBGM ();
 			} else if (scene.name == "Stage4") {
 				BgmManager.Instance.PlayStage4Background ();
+				BgmManager.Instance.PlayMainBGM ();
 			} else if (scene.name == "Result") {
 				BgmManager.Instance.PlayResultBGM ();
 			} else if (scene.name == "Title") {
