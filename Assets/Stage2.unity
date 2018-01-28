@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4958,6 +4958,11 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: bd89dc411cc9bce43a0303635f746491, type: 3}
+    - target: {fileID: 82984521242284614, guid: f2aa6c818b35c465ebc34818c1c7d4e5,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2aa6c818b35c465ebc34818c1c7d4e5, type: 2}
   m_IsPrefabParent: 0
@@ -6979,11 +6984,6 @@ Prefab:
       propertyPath: _remainTime
       value: 
       objectReference: {fileID: 253650086}
-    - target: {fileID: 114552003081200060, guid: 60972104491d98c42824e23dc01ac418,
-        type: 2}
-      propertyPath: _hitParticle
-      value: 
-      objectReference: {fileID: 100000, guid: 0d142f301e46cb44f8b703d429f489db, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60972104491d98c42824e23dc01ac418, type: 2}
   m_IsPrefabParent: 0
