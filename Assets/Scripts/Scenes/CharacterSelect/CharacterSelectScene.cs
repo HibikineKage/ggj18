@@ -8,6 +8,8 @@ namespace ggj2018
 
     public class CharacterSelectScene : SceneBase<CharacterSelectScene>
     {
+        public Fadepanel fadePanel;
+
         Cursor[] _cursors;
         public GameObject carsole;
         void Start()
@@ -29,8 +31,15 @@ namespace ggj2018
             {
                 if (!cur.IsTypeSelected) { return; }
             }
-            int loadingSceneIndex = SceneUtility.GetBuildIndexByScenePath(SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene(loadingSceneIndex + 1);
+            if (!fadePanel) return;
+
+            System.Action action = () =>
+            {
+                int loadingSceneIndex = SceneUtility.GetBuildIndexByScenePath(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(loadingSceneIndex + 1);
+            };
+            fadePanel.FadeOut(2.0f, action);
+            
         }
     }
 }
