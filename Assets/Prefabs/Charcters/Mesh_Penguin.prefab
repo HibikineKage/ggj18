@@ -238,6 +238,7 @@ MonoBehaviour:
   jumpForce: 8
   maxJumpFrequency: 3
   groundCheckRayDirection: 3.31
+  name: Penguin
 --- !u!124 &124630985238585568
 Behaviour:
   m_ObjectHideFlags: 1
