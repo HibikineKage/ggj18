@@ -23,6 +23,8 @@ namespace ggj2018
         {
             get { return playerNumber; }
         }
+        GameObject hitParticle;
+
         /// <summary>
         /// ダメージを受けている間のカウンター
         /// 毎フレーム減り続け、ゼロになると起き上がる
@@ -147,8 +149,17 @@ namespace ggj2018
             Vector3 direction = this.transform.position - charcterBehavior.transform.position;
             this.rb.AddForce(direction.normalized * reboundForce);
 			AngrySound ();
+            generateHitParticle();
         }
 
+
+        void generateHitParticle()
+        {
+            if (hitParticle != null)
+            {
+                Instantiate(hitParticle, this.transform.position, this.transform.rotation);
+            }
+        }
 
         bool GetJumpInput()
         {
@@ -233,5 +244,10 @@ namespace ggj2018
 				SeManager.Instance.PlayAngryCat ();
 			}
 		}
+
+        public void SetHitParticle(GameObject particle)
+        {
+            this.hitParticle = particle;
+        }
     }
 }
