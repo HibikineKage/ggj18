@@ -1669,7 +1669,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_RootOrder
-      value: 73
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_Name
@@ -3580,7 +3580,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 68
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &312922490
 GameObject:
@@ -5348,6 +5348,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 82984521242284614, guid: f2aa6c818b35c465ebc34818c1c7d4e5,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bd89dc411cc9bce43a0303635f746491, type: 3}
+    - target: {fileID: 82984521242284614, guid: f2aa6c818b35c465ebc34818c1c7d4e5,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243642759881777328, guid: c372facdddcdc470c873d0c0901167e3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2aa6c818b35c465ebc34818c1c7d4e5, type: 2}
   m_IsPrefabParent: 0
@@ -9563,7 +9574,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9459ca99eaebb43448e9c90b509658bb, type: 2}
       propertyPath: m_RootOrder
-      value: 71
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9459ca99eaebb43448e9c90b509658bb, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -10974,7 +10985,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_RootOrder
-      value: 74
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_Name
@@ -11339,7 +11350,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_RootOrder
-      value: 76
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_Name
@@ -12975,7 +12986,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_RootOrder
-      value: 75
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_Name
@@ -13181,28 +13192,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 103
       objectReference: {fileID: 0}
-    - target: {fileID: 1930835708155716, guid: c3f9a28658cd141a39e7afdffe5d8595, type: 2}
-      propertyPath: m_Name
-      value: smanhole
-      objectReference: {fileID: 0}
-    - target: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a3835ecc2480c46baa4f2d4d0e18f416, type: 3}
-    - target: {fileID: 114671840375919250, guid: c3f9a28658cd141a39e7afdffe5d8595,
-        type: 2}
-      propertyPath: smanhole
-      value: 
-      objectReference: {fileID: 1405714117}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3f9a28658cd141a39e7afdffe5d8595, type: 2}
   m_IsPrefabParent: 0
---- !u!82 &1405714117 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
-    type: 2}
-  m_PrefabInternal: {fileID: 1405714116}
 --- !u!1 &1407274831
 GameObject:
   m_ObjectHideFlags: 0
@@ -15048,7 +15040,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1633370651
 Prefab:
@@ -16595,7 +16587,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
       propertyPath: m_RootOrder
-      value: 77
+      value: 76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5078802b98b35848820d8d0af27d4ef, type: 2}
@@ -17439,7 +17431,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4b9d8500f4e8946f5aed0a6ee13563a8, type: 2}
       propertyPath: m_RootOrder
-      value: 72
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 4b9d8500f4e8946f5aed0a6ee13563a8, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
