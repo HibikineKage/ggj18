@@ -703,6 +703,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1930835708155716, guid: c3f9a28658cd141a39e7afdffe5d8595, type: 2}
+      propertyPath: m_Name
+      value: smanhole
+      objectReference: {fileID: 0}
+    - target: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3835ecc2480c46baa4f2d4d0e18f416, type: 3}
+    - target: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: c372facdddcdc470c873d0c0901167e3,
+        type: 2}
+    - target: {fileID: 114671840375919250, guid: c3f9a28658cd141a39e7afdffe5d8595,
+        type: 2}
+      propertyPath: smanhole
+      value: 
+      objectReference: {fileID: 2130903420}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3f9a28658cd141a39e7afdffe5d8595, type: 2}
   m_IsPrefabParent: 0
@@ -1954,3 +1974,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: df0e83a6e65c91744ab949f3982c88fe, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &2130903420 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82955703626180098, guid: c3f9a28658cd141a39e7afdffe5d8595,
+    type: 2}
+  m_PrefabInternal: {fileID: 1064138643}
